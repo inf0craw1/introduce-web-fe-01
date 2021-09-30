@@ -1,0 +1,78 @@
+.video-responsive {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+}
+
+.iframe-container {
+  position: absolute;
+  width: 100%;
+  min-width: 1320px;
+  height: 100%;
+
+  & > iframe {
+    width: 150%;
+    height: 150%;
+    margin-top: -25%;
+    margin-left: -25%;
+  }
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #00080CF0 18%, #00030170 85%);
+  opacity: 1;
+}
+
+.background-overlay-content {
+  margin: 0 100px;
+  font-size: 32px;
+  color: #fff;
+}
+
+.content-divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: #FF7F50;
+}
+
+.content-divider {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
+  color: #fff;
+}
+
+.content-divider-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 39px;
+  font-weight: 700;
+}
+
+.content-divider-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    font-size: 16px;
+    font-weight: 600;
+
+    &:last-of-type {
+      margin-top: 20px;
+      font-style: italic;
+    }
+  }
+}

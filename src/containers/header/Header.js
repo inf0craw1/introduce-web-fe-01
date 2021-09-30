@@ -7,8 +7,6 @@ import {
 
 import { Link } from 'components';
 
-import Logo from 'assets/cropped-logo-1-2048x562.png';
-
 import './Header.scss';
 
 const Header = ({
@@ -21,7 +19,7 @@ const Header = ({
       <div className='header'>
         <div className='header-left'>
           <Link to='/'>
-            <img alt='logo' src={Logo} height='20' />
+            TRACK FARM
           </Link>
         </div>
         <div className='header-right'>

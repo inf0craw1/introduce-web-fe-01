@@ -7,8 +7,6 @@ import {
   Drafts as EmailIcon,
 } from '@material-ui/icons';
 
-import Logo from 'assets/cropped-logo-1-2048x562.png';
-
 import './Footer.scss';
 
 const Footer = ({
@@ -18,11 +16,8 @@ const Footer = ({
     <div className={`footer-container${isMobile ? ' isMobile' : ''}`}>
       <div className='footer'>
         <div>
-          <div>
-            <img alt='logo' src={Logo} height='30' />
-          </div>
-          <div className='footer-title'>
-            <p>AVALVE INC</p>
+          <div className='footer-title orange-1'>
+            TRACK FARM
           </div>
           <div className='footer-description'>
             <p>
@@ -39,33 +34,23 @@ const Footer = ({
           <div className='footer-description'>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              <div>
-                HeadOffice : 283, Bupyeong-daero, Bupyeong-gu, Incheon
-              </div>
+              HeadOffice : 283, Bupyeong-daero, Bupyeong-gu, Incheon
             </p>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              <div>
-                Laboratory : Hana Building, 158, Wonhyo-ro, Yongsan-gu, Seoul
-              </div>
+              Laboratory : Hana Building, 158, Wonhyo-ro, Yongsan-gu, Seoul
             </p>
             <p>
               <PhoneIcon fontSize='small' htmlColor='#cc9955' />
-              <div>
-                (Tel) 02 - 3275 - 0110
-              </div>
+              (Tel) 02 - 3275 - 0110
             </p>
             <p>
               <PrintIcon fontSize='small' htmlColor='#cc9955' />
-              <div>
-                (Fax) 02 - 3275 - 0112
-              </div>
+              (Fax) 02 - 3275 - 0112
             </p>
             <p>
               <EmailIcon fontSize='small' htmlColor='#cc9955' />
-              <div>
-                avalve@naver.com
-              </div>
+              avalve@naver.com
             </p>
           </div>
         </div>

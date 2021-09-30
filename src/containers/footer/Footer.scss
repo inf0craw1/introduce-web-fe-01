@@ -14,8 +14,8 @@
   p {
     display: flex;
 
-    & > div {
-      margin-left: 5px;
+    & > svg {
+      margin-right: 5px;
     }
   }
 }

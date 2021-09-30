@@ -18,6 +18,9 @@
 
 .header-left {
   .link {
+    color: #F79646;
+    font-size: 20px;
+    font-weight: 700;
     transition: opacity 0.3s;
 
     &:hover {
@@ -45,7 +48,7 @@
         content: '';
         width: 100%;
         height: 2px;
-        background-color: #ce260c;
+        background-color: #F79646;
         visibility: hidden;
         transform: scaleX(0);
         transform-origin: bottom left;
@@ -55,7 +58,7 @@
   
     &:hover {
       & > span {
-        color: #ce260c;
+        color: #F79646;
   
         &::after {
           visibility: visible;

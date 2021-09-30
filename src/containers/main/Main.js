@@ -11,10 +11,23 @@ import { Link } from 'components';
 
 import Header from 'containers/header';
 import Footer from 'containers/footer';
+import Home from 'containers/home';
+import Project from 'containers/project';
 
 import './Main.scss';
 
-const Main = () => {
+const PAGES = {
+  '/': Home,
+  '/company': Home,
+  '/project': Project,
+  '/notice': Home,
+};
+
+const Main = ({
+  match: {
+    path,
+  },
+}) => {
   const menuRef = useRef(null);
 
   const [isMobile, setIsMobile] = useState(false);
@@ -25,7 +38,6 @@ const Main = () => {
   }, 50);
 
   const handleClickOutside = useCallback(event => {
-    console.log("event target is: ", event.target);
     if (!menuRef.current.contains(event.target)) {
       setIsOpen(false);
     }
@@ -46,42 +58,17 @@ const Main = () => {
     };
   }, []); // eslint-disable-line
 
+  const Page = PAGES[path];
+
   return (
-    <div className={`container-wrapper${isMobile ? ' isMobile' : ''}`}>
-      <div className={`container${isOpen ? ' isOpen' : ''}`}>
+    <div className={`main-wrapper${isMobile ? ' isMobile' : ''}`}>
+      <div className={`main-container${isOpen ? ' isOpen' : ''}`}>
         <Header
           isMobile={isMobile}
           isOpen={isOpen}
           onClickMenu={handleClickMenu}
         />
-        <div className='main'>
-          <div className="video-responsive">
-            <div className='iframe-container'>
-              <iframe
-                src='https://www.youtube.com/embed/LiNI-JUFtsA?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=0&end=30&playlist=LiNI-JUFtsA'
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              />
-            </div>
-            <div className='background-overlay' />
-          </div>
-          <div className='content-divider-container'>
-            <div className='content-divider'>
-              <div className='content-divider-left'>
-                AVALVE LAB
-              </div>
-              <div className='content-divider-right'>
-                <div>
-                  AVALVE provides an automated software solution that enables anyone without specialized knowledge to successfully cultivate fresh crops produced in smart farms through Big data-based deep learning technology, server-based IOT, Autonomous Driving, and Robot technology.
-                </div>
-                <div>
-                  Seoul, Yongsan Lab. Institute.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Page />
         <Footer isMobile={isMobile} />
       </div>
       <div ref={menuRef} className={`menu${isOpen ? ' isOpen' : ''}`}>
