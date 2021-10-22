@@ -1,0 +1,64 @@
+.orange-1 {
+  color: #F79646;
+}
+
+.main-wrapper {
+  overflow-x: hidden;
+}
+
+.main-container {
+  position: relative;
+  right: 0;
+  transition: right 0.3s;
+
+  &.isOpen {
+    right: 300px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  transition: right 0.3s;
+
+  &.isOpen {
+    right: 0;
+  }
+
+  .link {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.035);
+    cursor: pointer;
+
+    &:hover {
+      color: #13aff0;
+    }
+  }
+}
+
+.isMobile {
+  .content-divider {
+    flex-direction: column;
+  }
+
+  .content-divider-content {
+    flex-direction: column;
+
+    & > div {
+      margin-right: 0;
+    }
+  }
+}
