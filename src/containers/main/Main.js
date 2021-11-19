@@ -13,6 +13,7 @@ import Header from 'containers/header';
 import Footer from 'containers/footer';
 import Home from 'containers/home';
 import Project from 'containers/project';
+import Notice from 'containers/notice';
 
 import './Main.scss';
 
@@ -20,7 +21,7 @@ const PAGES = {
   '/': Home,
   '/company': Home,
   '/project': Project,
-  '/notice': Home,
+  '/notice': Notice,
 };
 
 const Main = ({
