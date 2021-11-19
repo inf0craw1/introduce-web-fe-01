@@ -34,6 +34,7 @@
       .logo {
         width: 250px;
         height: auto;
+        margin-bottom: 2.5em;
       }
       .about-btn {
         width: fit-content;
@@ -42,7 +43,8 @@
         font-size: 1.7em;
         font-weight: bold;
         padding: 0.5em;
-        margin-top: 0.5em;
+        cursor: pointer;
+        text-decoration: none;
       }
     }
     .discription-right {

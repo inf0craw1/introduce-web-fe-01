@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Company.scss';
 
@@ -24,10 +25,10 @@ const Company = () => {
             Innovative & sustainable<br/>
             Farming solution Provider
             </h2>
-            <img className='logo' src={Logo} alt='logo' />
-            <div className='about-btn'>
+            <img className='logo' src={Logo} alt='logo' /><br/>
+            <Link className='about-btn' to='/notice'>
               About Us
-            </div>
+            </Link>
           </div>
           <div className='discription-right'>
             <p className='bold'>Serious employment reality of pig farms</p>
