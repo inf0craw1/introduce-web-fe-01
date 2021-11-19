@@ -1,0 +1,132 @@
+.notice {
+  .video-responsive {
+    height: 600px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .background-overlay-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    & > div {
+      font-size: 13px;
+    }
+
+    .notice-contact {
+      font-size: 25px;
+      margin-top: 30px;
+      padding: 6px 40px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      transition: color .3s;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+
+  .content-divider-container {
+    justify-content: initial;
+
+    .content-divider {
+      margin-left: 40px;
+    }
+
+    .content-divider-left {
+      align-items: initial;
+      flex-direction: column;
+    }
+
+    .news-headline {
+      width: 400px;
+      border-top: 5px dashed #98CA7C;
+    }
+  }
+
+  .news-container {
+    background-color: #fff;
+    justify-content: center;
+
+    .content-divider {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+    }
+  
+    .content-divider-title {
+      margin-bottom: 16px;
+      color: #000;
+      font-size: 32px;
+      font-weight: 600;
+    }
+  
+    .content-divider-content {
+      display: flex;
+      justify-content: space-between;
+
+      .news-link {
+        text-decoration: none;
+
+        img {
+          transition: transform .3s;
+        }
+
+        &:hover {
+          img {
+            transform: scale(105%);
+          }
+        }
+      }
+  
+      & > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 40px;
+  
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+  
+      .img {
+        height: 150px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+  
+      p {
+        text-align: initial;
+        color: #404040;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -12,11 +12,10 @@
     min-width: 1320px;
     height: 100%;
   
-    & > iframe {
-      width: 150%;
-      height: 150%;
-      margin-top: -25%;
-      margin-left: -25%;
+    & > video {
+      width: 130%;
+      height: 130%;
+      margin-left: -15%;
     }
   }
 
@@ -25,9 +24,11 @@
   }
 
   .background-overlay-content {
+    flex-direction: column;
     font-weight: 700;
 
     .link {
+      margin-top: 10px;
       display: flex;
       width: fit-content;
       color: #fff;

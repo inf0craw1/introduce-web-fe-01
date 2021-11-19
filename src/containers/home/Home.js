@@ -1,5 +1,12 @@
 import React from 'react';
 
+import CountUp from 'react-countup';
+
+import home from 'assets/home.mp4';
+import Img1 from 'assets/11.jpg';
+import Img2 from 'assets/12.jpg';
+import Img3 from 'assets/13.jpg';
+
 import './Home.scss';
 
 const Home = () => {
@@ -7,20 +14,58 @@ const Home = () => {
     <div className='main'>
       <div className="video-responsive">
         <div className='iframe-container'>
-          <iframe
-            src='https://www.youtube.com/embed/pr-ayQwckEE?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=pr-ayQwckEE'
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          />
+          <video className='videoTag' autoPlay loop muted>
+            <source src={home} type='video/mp4' />
+          </video>
         </div>
         <div className='background-overlay'>
           <div className='background-overlay-content'>
-            양돈농가의 질병예찰 및 관리효율성 향상을 위한
-            <br />
-            <span className='orange-1'>
-              AI 돼지 모션 인식 관리시스템 트랙팜(Track Farm)
-            </span>
+            <div>
+              <span>
+                __Smart Livestock Farming
+              </span>
+              <div>
+                TRACKFARM
+              </div>
+            </div>
+            <div>
+              <div>
+                <CountUp
+                  end={8000}
+                  duration={2}
+                />
+                <span>
+                  +
+                </span>
+              </div>
+              <div>
+                <div>
+                  Individual
+                </div>
+                <div>
+                  Pig Model Data
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <CountUp
+                  end={10}
+                  duration={1}
+                />
+                <span>
+                  +
+                </span>
+              </div>
+              <div>
+                <div>
+                  small and medium-sized
+                </div>
+                <div>
+                  farm partnership
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -31,11 +76,43 @@ const Home = () => {
           </div>
           <div className='content-divider-right'>
             <div>
-              TRACK FARM provides an automated software solution that enables anyone without specialized knowledge to successfully cultivate fresh crops produced in smart farms through Big data-based deep learning technology, server-based IOT, Autonomous Driving, and Robot technology.
+              Deep Learning Pig Farm Healthcare
+              <br />
+              <br />
+              With Track Farm, Disease prediction, Object management, and Productivity management can be efficiently performed.
             </div>
             <div>
               Seoul, Yongsan Lab. Institute.
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='content-below-container'>
+        <div className='content-below'>
+          <img alt='img1' src={Img1} />
+          <div>
+            <h1>
+              Deep tech
+            </h1>
+          </div>
+        </div>
+        <div className='content-below'>
+          <img alt='img2' src={Img2} />
+          <div>
+            <h1>
+              Farm tech
+            </h1>
+            <div>
+              Future Livestock
+            </div>
+          </div>
+        </div>
+        <div className='content-below'>
+          <img alt='img3' src={Img3} />
+          <div>
+            <h1>
+              Sustainable Breeding
+            </h1>
           </div>
         </div>
       </div>
