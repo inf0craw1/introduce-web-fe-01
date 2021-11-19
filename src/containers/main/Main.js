@@ -12,13 +12,14 @@ import { Link } from 'components';
 import Header from 'containers/header';
 import Footer from 'containers/footer';
 import Home from 'containers/home';
+import Company from 'containers/company';
 import Project from 'containers/project';
 
 import './Main.scss';
 
 const PAGES = {
   '/': Home,
-  '/company': Home,
+  '/company': Company,
   '/project': Project,
   '/notice': Home,
 };
