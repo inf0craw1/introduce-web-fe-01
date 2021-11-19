@@ -2,9 +2,13 @@ import React from 'react';
 
 import { ArrowRightAlt as ArrowIcon } from '@material-ui/icons';
 
-import Img1 from 'assets/project01.png';
-import Img2 from 'assets/project02.png';
-import Img3 from 'assets/project02_2.png';
+import project from 'assets/project.mp4';
+import Img1 from 'assets/5.png';
+import Img2 from 'assets/6.png';
+import Img3 from 'assets/7.png';
+import Img4 from 'assets/8.png';
+import Img5 from 'assets/9.jpg';
+import Img6 from 'assets/10.jpg';
 
 import { Link } from 'components';
 
@@ -15,12 +19,9 @@ const Project = () => {
     <div className='main project'>
       <div className="video-responsive">
         <div className='iframe-container'>
-          <iframe
-            src='https://www.youtube.com/embed/pr-ayQwckEE?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=pr-ayQwckEE'
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          />
+          <video className='videoTag' autoPlay loop muted>
+            <source src={project} type='video/mp4' />
+          </video>
         </div>
         <div className='background-overlay'>
           <div className='background-overlay-content'>
@@ -46,13 +47,13 @@ const Project = () => {
               </p>
             </div>
             <div>
-              <img alt='img1' src={Img2} />
+              <img alt='img2' src={Img2} />
               <p>
                 PROJECT 02_1
               </p>
             </div>
             <div>
-              <img alt='img1' src={Img3} />
+              <img alt='img3' src={Img3} />
               <p>
                 PROJECT 02_2
               </p>
@@ -60,13 +61,22 @@ const Project = () => {
           </div>
           <div className='content-divider-content'>
             <div>
-              PROTO W218
+              <img alt='img4' src={Img4} />
+              <p>
+                PROJECT 01
+              </p>
             </div>
             <div>
-              PROTO W204
+              <img alt='img5' src={Img5} />
+              <p>
+                PROJECT 02_1
+              </p>
             </div>
             <div>
-              PROTO W204S
+              <img alt='img6' src={Img6} />
+              <p>
+                PROJECT 02_2
+              </p>
             </div>
           </div>
           <div className='content-divider-content'>

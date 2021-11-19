@@ -23,7 +23,7 @@ const Footer = ({
             <p>
               COPYRIGHTⓒ2020
               <br />
-              BY AVALVE CO, LTD. ALL RIGHTS RESERVED
+              BY TRACKFARM CO, LTD. ALL RIGHTS RESERVED
             </p>
           </div>
         </div>
@@ -34,15 +34,15 @@ const Footer = ({
           <div className='footer-description'>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              HeadOffice : 283, Bupyeong-daero, Bupyeong-gu, Incheon
+              HeadOffice: Bichaena Startup Center 18-21, Eulji-ro 6-ga, Jung-gu, Seoul
             </p>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              Laboratory : Hana Building, 158, Wonhyo-ro, Yongsan-gu, Seoul
+              Laboratory: Hana Building, 158, Wonhyo-ro, Yongsan-gu, Seoul
             </p>
             <p>
               <PhoneIcon fontSize='small' htmlColor='#cc9955' />
-              (Tel) 02 - 3275 - 0110
+              (Tel) 010-2088-9798
             </p>
             <p>
               <PrintIcon fontSize='small' htmlColor='#cc9955' />
@@ -50,7 +50,7 @@ const Footer = ({
             </p>
             <p>
               <EmailIcon fontSize='small' htmlColor='#cc9955' />
-              avalve@naver.com
+              trackfarm@naver.com
             </p>
           </div>
         </div>

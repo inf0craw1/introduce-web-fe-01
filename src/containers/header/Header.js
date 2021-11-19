@@ -7,6 +7,8 @@ import {
 
 import { Link } from 'components';
 
+import Logo from 'assets/trackfarm_logo.png';
+
 import './Header.scss';
 
 const Header = ({
@@ -19,7 +21,7 @@ const Header = ({
       <div className='header'>
         <div className='header-left'>
           <Link to='/'>
-            TRACK FARM
+            <img alt='logo' src={Logo} />
           </Link>
         </div>
         <div className='header-right'>
