@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import notice from 'assets/notice.jpg';
-import Img1 from 'assets/news1.jpeg';
-import Img2 from 'assets/news2.jpeg';
+import Img1 from 'assets/news1.png';
+import Img2 from 'assets/news2.png';
 
 import './Notice.scss';
 

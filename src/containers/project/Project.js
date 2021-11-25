@@ -2,7 +2,6 @@ import React from 'react';
 
 import { ArrowRightAlt as ArrowIcon } from '@material-ui/icons';
 
-import project from 'assets/project.mp4';
 import Img1 from 'assets/5.png';
 import Img2 from 'assets/6.png';
 import Img3 from 'assets/7.png';
@@ -19,9 +18,12 @@ const Project = () => {
     <div className='main project'>
       <div className="video-responsive">
         <div className='iframe-container'>
-          <video className='videoTag' autoPlay loop muted>
-            <source src={project} type='video/mp4' />
-          </video>
+          <iframe
+            src='https://www.youtube.com/embed/j051u__DeFQ?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=pr-ayQwckEE'
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          />
         </div>
         <div className='background-overlay'>
           <div className='background-overlay-content'>
