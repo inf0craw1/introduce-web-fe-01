@@ -12,10 +12,8 @@
     min-width: 1320px;
     height: 100%;
   
-    & > video {
-      width: 130%;
-      height: 130%;
-      margin-left: -15%;
+    & > iframe {
+      height: 155%;
     }
   }
 
