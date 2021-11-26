@@ -2,7 +2,6 @@ import React from 'react';
 
 import CountUp from 'react-countup';
 
-import home from 'assets/home.mp4';
 import Img1 from 'assets/11.jpg';
 import Img2 from 'assets/12.jpg';
 import Img3 from 'assets/13.jpg';
@@ -14,9 +13,12 @@ const Home = () => {
     <div className='main'>
       <div className="video-responsive">
         <div className='iframe-container'>
-          <video className='videoTag' autoPlay loop muted>
-            <source src={home} type='video/mp4' />
-          </video>
+          <iframe
+            src='https://youtube.com/embed/UtZPl7WS3KI?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=pr-ayQwckEE'
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          />
         </div>
         <div className='background-overlay'>
           <div className='background-overlay-content'>

@@ -60,6 +60,10 @@ const Main = ({
     };
   }, []); // eslint-disable-line
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [path]);
+
   const Page = PAGES[path];
 
   return (
