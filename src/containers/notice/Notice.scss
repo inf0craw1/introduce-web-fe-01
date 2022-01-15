@@ -107,18 +107,18 @@
       }
   
       .img {
-        height: 150px;
         overflow: hidden;
 
         img {
           width: 110%;
           height: auto;
+          margin-top: -5%;
           margin-left: -5%;
         }
       }
   
       p {
-        text-align: initial;
+        text-align: center;
         color: #404040;
         font-size: 13px;
         font-weight: 500;

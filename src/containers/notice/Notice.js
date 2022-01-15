@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import notice from 'assets/notice.jpg';
-import Img1 from 'assets/news1.png';
-import Img2 from 'assets/news2.png';
+import Img1 from 'assets/news1.jpg';
+import Img2 from 'assets/news2.jpg';
 
 import './Notice.scss';
 
@@ -44,7 +44,7 @@ const Notice = () => {
                   <img alt='img1' src={Img1} />
                 </div>
                 <p>
-                  NEW INNOVATIVE TECHNOLOGY SESSIONS FOR LIVESTOCK PRODUCERS: ALL FARMERS WELCOME
+                  [NEWS] (주)트랙팜, 한양대학교 기술지주회사 자회사 협약 체결, 초기 시드 투자 유치
                 </p>
                 <span>
                   Track Farm
@@ -57,7 +57,7 @@ const Notice = () => {
                   <img alt='img2' src={Img2} />
                 </div>
                 <p>
-                  FARMTRACK IS SET TO REVOLUTIONIZE THE BEEF CATTLE INDUSTRY WITH THEIR EARLY ILLNESS DETECTION SYSTEM
+                  [NEWS] (주)트랙팜, 제 26회 COMMAX 벤처창업 경진대회 우수상 수상
                 </p>
                 <span>
                   Track Farm
