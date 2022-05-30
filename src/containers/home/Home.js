@@ -14,7 +14,7 @@ const Home = () => {
       <div className="video-responsive">
         <div className='iframe-container'>
           <iframe
-            src='https://youtube.com/embed/UtZPl7WS3KI?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=pr-ayQwckEE'
+            src='https://youtube.com/embed/aiYpgrv4UdU?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&playlist=aiYpgrv4UdU'
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

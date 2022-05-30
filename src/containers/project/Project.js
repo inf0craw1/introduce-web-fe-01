@@ -8,6 +8,8 @@ import Img3 from 'assets/7.png';
 import Img4 from 'assets/8.png';
 import Img5 from 'assets/9.jpg';
 import Img6 from 'assets/10.jpg';
+import Img7 from 'assets/14.jpg';
+import Img8 from 'assets/15.jpg';
 
 import { Link } from 'components';
 
@@ -81,12 +83,18 @@ const Project = () => {
               </p>
             </div>
           </div>
-          <div className='content-divider-content'>
-            <div>
-              RELEASE NO.02
+          <div className='content-divider-content' style={{ justifyContent: 'flex-start' }}>
+            <div style={{ flex: 0 }}>
+              <img alt='img7' src={Img7} style={{ height: 200, width: 300 }} />
+              <p>
+                PROJECT 03
+              </p>
             </div>
-            <div>
-              R&D NO.4
+            <div style={{ flex: 0 }}>
+              <img alt='img8' src={Img8} style={{ height: 200, width: 210 }} />
+              <p>
+                PROJECT 03_1
+              </p>
             </div>
           </div>
         </div>
