@@ -21,7 +21,7 @@ const Project = () => {
       <div className="video-responsive">
         <div className='iframe-container'>
           <iframe
-            src='https://www.youtube.com/embed/HN4HERBkOKQ?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=HN4HERBkOKQ'
+            src='https://www.youtube.com/embed/Ehx6_nnnw0k?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=Ehx6_nnnw0k'
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
