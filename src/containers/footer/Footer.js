@@ -34,19 +34,19 @@ const Footer = ({
           <div className='footer-description'>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              HeadOffice: Bichaena Startup Center 18-21, Eulji-ro 6-ga, Jung-gu, Seoul
+              HeadOffice: Chungcheongnam-do Asan-si Baebangeup Heemangro 46beongil 45-11, 502
             </p>
             <p>
               <LocationIcon fontSize='small' htmlColor='#cc9955' />
-              Laboratory: Hana Building, 158, Wonhyo-ro, Yongsan-gu, Seoul
+              Laboratory: Gyeonggi-do Seongnam-si Sujeonggu Daewangpangyoro 815, Pangyo Startup-zone, 832
+            </p>
+            <p>
+              <LocationIcon fontSize='small' htmlColor='#cc9955' />
+              R&D Farm: Gangwon-do Hoengseong-gun Gonggeunmyeon Osanri 262-13
             </p>
             <p>
               <PhoneIcon fontSize='small' htmlColor='#cc9955' />
               (Tel) 010-2088-9798
-            </p>
-            <p>
-              <PrintIcon fontSize='small' htmlColor='#cc9955' />
-              (Fax) 02 - 3275 - 0112
             </p>
             <p>
               <EmailIcon fontSize='small' htmlColor='#cc9955' />
