@@ -16,7 +16,10 @@
   margin: 0 auto;
 }
 
-.header-left {
+.header-logo {
+  display: flex;
+  align-items: center;
+
   .link {
     color: #F79646;
     font-size: 20px;
@@ -33,18 +36,20 @@
   }
 }
 
-.header-right {
+.header-pagelist {
   display: flex;
 
   .link {
+    display: flex;
+    align-items: center;
     padding: 0 15px;
     font-size: 17px;
     font-weight: 700;
 
-    & > span {
+    &>span {
       position: relative;
       color: white;
-  
+
       &::after {
         position: absolute;
         bottom: -30%;
@@ -59,11 +64,11 @@
         transition: all 0.25s ease-out;
       }
     }
-  
+
     &:hover {
-      & > span {
+      &>span {
         color: #21863a;
-  
+
         &::after {
           visibility: visible;
           transform: scaleX(1);
@@ -82,5 +87,22 @@
 
   &:hover {
     color: #aaaaaa;
+  }
+}
+
+.contact-button {
+  border: 1px solid white;
+  color: white;
+  padding: 8px 21px;
+  background: transparent;
+
+  transition: all .3s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: white;
+    color: black;
+
   }
 }
