@@ -23,31 +23,51 @@ const Footer = ({ isMobile }) => {
           </div>
           <div className="footer-description">
             <div className="description-item">
-              <LocationIcon fontSize="inherit" htmlColor="#7FFC3B" />
+              <LocationIcon
+                className="icon"
+                fontSize="inherit"
+                htmlColor="#7FFC3B"
+              />
               <p className="font-text-sm">
                 HeadOffice: Chungcheongnam-do Asan-si Baebangeup Heemangro
                 46beongil 45-11, 502
               </p>
             </div>
             <div className="description-item">
-              <LocationIcon fontSize="inherit" htmlColor="#7FFC3B" />
+              <LocationIcon
+                className="icon"
+                fontSize="inherit"
+                htmlColor="#7FFC3B"
+              />
               <p className="font-text-sm">
                 Laboratory: Gyeonggi-do Seongnam-si Sujeonggu Daewangpangyoro
                 815, Pangyo Startup-zone, 832
               </p>
             </div>
             <div className="description-item">
-              <LocationIcon fontSize="inherit" htmlColor="#7FFC3B" />
+              <LocationIcon
+                className="icon"
+                fontSize="inherit"
+                htmlColor="#7FFC3B"
+              />
               <p className="font-text-sm">
                 R&D Farm: Gangwon-do Hoengseong-gun Gonggeunmyeon Osanri 262-13
               </p>
             </div>
             <div className="description-item">
-              <PhoneIcon fontSize="inherit" htmlColor="#7FFC3B" />
+              <PhoneIcon
+                className="icon"
+                fontSize="inherit"
+                htmlColor="#7FFC3B"
+              />
               <p className="font-text-sm">(Tel) 010-2088-9798</p>
             </div>
             <div className="description-item">
-              <EmailIcon fontSize="inherit" htmlColor="#7FFC3B" />
+              <EmailIcon
+                className="icon"
+                fontSize="inherit"
+                htmlColor="#7FFC3B"
+              />
               <p className="font-text-sm">trackfarm@naver.com</p>
             </div>
           </div>
