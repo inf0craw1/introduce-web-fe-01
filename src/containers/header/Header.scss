@@ -1,3 +1,5 @@
+@use "/src/index";
+
 .header-container {
   position: absolute;
   top: 0;
@@ -21,9 +23,6 @@
   align-items: center;
 
   .link {
-    color: #F79646;
-    font-size: 20px;
-    font-weight: 700;
     transition: opacity 0.3s;
 
     &:hover {
@@ -31,7 +30,7 @@
     }
 
     img {
-      height: 20px;
+      height: 32px;
     }
   }
 }
@@ -43,8 +42,6 @@
     display: flex;
     align-items: center;
     padding: 0 15px;
-    font-size: 17px;
-    font-weight: 700;
 
     &>span {
       position: relative;
@@ -57,7 +54,7 @@
         content: '';
         width: 100%;
         height: 2px;
-        background-color: #21863a;
+        background-color: index.$brand100;
         visibility: hidden;
         transform: scaleX(0);
         transform-origin: bottom left;
@@ -67,7 +64,7 @@
 
     &:hover {
       &>span {
-        color: #21863a;
+        color: index.$brand100;
 
         &::after {
           visibility: visible;
@@ -93,7 +90,7 @@
 .contact-button {
   border: 1px solid white;
   color: white;
-  padding: 8px 21px;
+  padding: 7px 20px;
   background: transparent;
 
   transition: all .3s;
