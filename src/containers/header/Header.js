@@ -31,7 +31,9 @@ const Header = ({ isMobile, isOpen, onClickMenu }) => {
             </>
           )}
         </div>
-        {isMobile ? null : <button className="contact-button">CONTACT</button>}
+        {isMobile ? null : (
+          <button className="contact-button font-text-md">CONTACT</button>
+        )}
       </div>
     </div>
   );

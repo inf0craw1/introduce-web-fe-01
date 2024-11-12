@@ -1,3 +1,5 @@
+@use "/src/index";
+
 .video-responsive {
   position: relative;
   width: 100%;
@@ -11,7 +13,7 @@
   min-width: 1320px;
   height: 100%;
 
-  & > iframe {
+  &>iframe {
     width: 150%;
     height: 125%;
     margin-top: -10%;
@@ -38,18 +40,18 @@
   color: #fff;
   display: flex;
 
-  & > div {
+  &>div {
     flex: 1;
     font-weight: 600;
     text-align: center;
 
     &:first-of-type {
-      & > span {
+      &>span {
         font-size: 15px;
         font-weight: 400;
       }
 
-      & > div {
+      &>div {
         font-size: 38px;
       }
     }
@@ -58,7 +60,7 @@
       font-size: 55px;
     }
 
-    & > div {
+    &>div {
       font-size: 20px;
     }
   }
@@ -95,7 +97,7 @@
   flex-direction: column;
   margin: 0 0 0 16px;
 
-  & > div {
+  &>div {
     font-size: 16px;
     font-weight: 600;
 
@@ -118,18 +120,19 @@
     height: 100%;
   }
 
-  & > div {
+  &>div {
     position: absolute;
     color: #fff;
 
-    & > h1, & > div {
+    &>h1,
+    &>div {
       position: relative;
       left: 20px;
       top: -110px;
       margin-bottom: 5px;
     }
 
-    & > div {
+    &>div {
       font-style: italic;
     }
   }
