@@ -1,4 +1,13 @@
+@use "/src/index";
+
 .link {
   text-decoration: none;
   color: black;
+
+  span {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
 }

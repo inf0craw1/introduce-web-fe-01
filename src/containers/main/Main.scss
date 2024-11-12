@@ -1,3 +1,5 @@
+@use "/src/index";
+
 * {
   box-sizing: border-box;
 }
@@ -48,7 +50,7 @@
   .link {
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.035);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.035);
     cursor: pointer;
 
     &:hover {
@@ -65,7 +67,7 @@
   .content-divider-content {
     flex-direction: column;
 
-    & > div {
+    &>div {
       margin-right: 0;
     }
 
@@ -81,7 +83,7 @@
   .background-overlay-content {
     flex-direction: column;
 
-    & > div {
+    &>div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -105,8 +107,10 @@
   .grid-container {
     .grid-row {
       display: block;
+
       .grid-item {
         width: 100%;
+
         .item-wrapper {
           padding: 2em;
         }
@@ -116,10 +120,12 @@
 
   .discription-wrapper {
     display: block;
+
     .discription-left {
       width: 100%;
     }
-    .discription-right{
+
+    .discription-right {
       width: 100%;
       margin-top: 1.5em;
     }
