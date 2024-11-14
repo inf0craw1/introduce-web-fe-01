@@ -1,9 +1,10 @@
 @use "/src/index";
 
-.header-container {
-  position: absolute;
+.header-layout {
+  position: fixed;
   top: 0;
   display: flex;
+  background: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -11,10 +12,15 @@
   z-index: 10;
 }
 
+.header-container {
+  width: 100%;
+  max-width: 1280px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
