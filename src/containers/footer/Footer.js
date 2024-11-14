@@ -75,7 +75,7 @@ const Footer = ({ isMobile }) => {
               </div>
             </div>
           </div>
-          <div className="footer-description-container">
+          {/* <div className="footer-description-container">
             <div className="footer-description-title">LINKS LIST</div>
             <div className="footer-description">
               <div className="description-item">
@@ -94,7 +94,7 @@ const Footer = ({ isMobile }) => {
                 <p className="font-text-sm">Meetups</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer-layout">
