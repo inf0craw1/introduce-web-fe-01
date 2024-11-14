@@ -1,14 +1,21 @@
 @use "/src/index";
 
-.footer-container {
+.footer-layout {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background-color: index.$gray400;
+}
+
+.footer-container {
+  max-width: 1260px;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 50px 0;
 
@@ -53,6 +60,7 @@
 }
 
 .footer-copyright-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
