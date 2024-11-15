@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./Company.scss";
 
-import Logo from "assets/trackfarm_logo.png";
 import CompanyBackground from "assets/company_background.png";
 import SolutionImage1 from "assets/solution-image-1.png";
 import SolutionImage2 from "assets/solution-image-2.png";
@@ -25,7 +23,7 @@ const Company = () => {
         </div>
       </div>
       <div className="company-history-container"></div>
-      <div className="discription-container">
+      {/* <div className="discription-container">
         <div className="discription-wrapper">
           <div className="discription-left">
             <h3 className="discription-heading">
@@ -72,9 +70,9 @@ const Company = () => {
               an outbreak of African swine fever in one region, more than
               430,000 pigs on 261 farms are culled per day.
             </p>
-          </div>
+          </div> 
         </div>
-      </div>
+      </div> */}
       <div className="solutions-container">
         <div className="layout">
           <p className="solutions-subtitle font-display-xs">
