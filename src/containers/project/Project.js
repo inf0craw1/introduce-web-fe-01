@@ -1,94 +1,71 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import { ArrowRightAlt as ArrowIcon } from '@material-ui/icons';
+import { Link } from "components";
 
-import Img1 from 'assets/5.png';
-import Img2 from 'assets/6.png';
-import Img3 from 'assets/7.png';
-import Img4 from 'assets/8.png';
-import Img5 from 'assets/9.jpg';
-import Img6 from 'assets/10.jpg';
+import MainImg from "assets/product-main-image.png";
 
-import { Link } from 'components';
+import Img1_1 from "assets/project01-1.png";
+import Img1_2 from "assets/project01-2.png";
+import Img2_1 from "assets/project02-1.png";
+import Img2_2 from "assets/project02-2.png";
+import Img2_3 from "assets/project02-3.jpg";
+import Img2_4 from "assets/project02-4.jpg";
+import Img3_1 from "assets/project03-1.jpg";
+import Img3_2 from "assets/project03-2.jpg";
 
-import './Project.scss';
+import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
+
+import "./Project.scss";
+
+const imageData = [
+  { src: [Img1_1, Img1_2] },
+  { src: [Img2_1, Img2_2, Img2_3, Img2_4] },
+  { src: [Img3_1, Img3_2] },
+];
 
 const Project = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
-    <div className='main project'>
-      <div className="video-responsive">
-        <div className='iframe-container'>
-          <iframe
-            src='https://www.youtube.com/embed/HN4HERBkOKQ?autoplay=1&controls=0&mute=1&loop=1&modestbranding=1&start=65&end=660&playlist=HN4HERBkOKQ'
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          />
+    <div className="main project">
+      <div className="img-responsive">
+        <div className="img-container">
+          <img alt="MainImg" src={MainImg} />
         </div>
-        <div className='background-overlay'>
-          <div className='background-overlay-content'>
-            AI SMART FARM SYSTEM
-            <br />
-            <Link to='/company'>
-              CONTACT US
-              <ArrowIcon />
-            </Link>
+        <div className="background-overlay">
+          <div className="background-overlay-content">
+            <div className="background-overlay-content-top">
+              <div>
+                <div className="font-display-xs">Smart Livestock Farming</div>
+                <div className="font-display-lg">AI SMART FARM SYSTEM</div>
+              </div>
+
+              <button className="arrow-button font-text-md">
+                CONTACT US
+                <ArrowIcon className="arrow-icon" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div className='content-divider-container'>
-        <div className='content-divider'>
-          <div className='content-divider-title'>
-            OUR PROJECT
-          </div>
-          <div className='content-divider-content'>
-            <div>
-              <img alt='img1' src={Img1} />
-              <p>
-                PROJECT 01
-              </p>
+      <div className="tabs-container">
+        <div className="tabs font-text-md">
+          {imageData.map((_, index) => (
+            <button
+              key={index}
+              className={`tab-button ${activeTab === index ? "active" : ""}`}
+              onClick={() => setActiveTab(index)}
+            >
+              PRODUCT 0{index + 1}
+            </button>
+          ))}
+        </div>
+        <div className="tabs-images-grid">
+          {imageData[activeTab].src.map((img, index) => (
+            <div className="image-container">
+              <img src={img} alt={index} className="tab-image" />
             </div>
-            <div>
-              <img alt='img2' src={Img2} />
-              <p>
-                PROJECT 02_1
-              </p>
-            </div>
-            <div>
-              <img alt='img3' src={Img3} />
-              <p>
-                PROJECT 02_2
-              </p>
-            </div>
-          </div>
-          <div className='content-divider-content'>
-            <div>
-              <img alt='img4' src={Img4} />
-              <p>
-                PROJECT 01
-              </p>
-            </div>
-            <div>
-              <img alt='img5' src={Img5} />
-              <p>
-                PROJECT 02_1
-              </p>
-            </div>
-            <div>
-              <img alt='img6' src={Img6} />
-              <p>
-                PROJECT 02_2
-              </p>
-            </div>
-          </div>
-          <div className='content-divider-content'>
-            <div>
-              RELEASE NO.02
-            </div>
-            <div>
-              R&D NO.4
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

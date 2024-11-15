@@ -1,96 +1,188 @@
+@use "/src/index";
+
 .project {
-  .video-responsive {
+  background-color: index.$black;
+
+  .img-responsive {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 120vh;
     overflow: hidden;
   }
-  
-  .iframe-container {
+
+  .img-container {
     position: absolute;
     width: 100%;
-    min-width: 1320px;
     height: 100%;
-  
-    & > iframe {
-      height: 155%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   .background-overlay {
-    background-image: linear-gradient(180deg, #000000 10%, #F2295B00 49%);
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.65) 90%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
 
   .background-overlay-content {
-    flex-direction: column;
-    font-weight: 700;
-
-    .link {
-      margin-top: 10px;
-      display: flex;
-      width: fit-content;
-      color: #fff;
-      font-size: 14px;
-      background-color: #6087c9;
-      border-radius: 5px;
-      padding: 15px 30px;
-
-      &:hover {
-        background-color: #6ec1e4;
-      }
-
-      svg {
-        vertical-align: middle;
-        margin-left: 5px;
-        margin-bottom: 3px;
-      }
-    }
-  }
-
-  .content-divider-container {
-    width: 100%;
-    background-color: #fff;
-  }
-  
-  .content-divider {
-    display: flex;
-    flex-direction: column;
     width: 80%;
-  }
+    max-width: 1260px;
+    color: index.$white;
 
-  .content-divider-title {
-    margin-bottom: 16px;
-    color: #000;
-    font-size: 32px;
-    font-weight: 600;
-  }
-
-  .content-divider-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
 
-    & > div {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-right: 40px;
+  .background-overlay-content-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 
-      &:last-of-type {
-        margin-right: 0;
+    align-items: start;
+
+    margin-top: 200px;
+    margin-bottom: 170px;
+
+    .font-display-xs {
+      margin-bottom: 12px;
+    }
+  }
+
+  .arrow-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border: 1px solid index.$white;
+    padding: 7px 20px;
+
+    background: transparent;
+    color: index.$white;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    .arrow-icon {
+      fill: index.$white;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      border: 1px solid index.$brand200;
+      color: index.$brand200;
+
+      .arrow-icon {
+        fill: index.$brand200;
       }
     }
+  }
 
-    img {
+  .tabs-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -30vh;
+    padding-bottom: 20vh;
+
+    z-index: 5;
+  }
+
+  .tabs {
+    width: 80%;
+    display: flex;
+    gap: 36px;
+    justify-content: flex-end;
+
+    margin-bottom: 36px;
+  }
+
+  .tab-button {
+    position: relative;
+
+    color: index.$gray200;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &::before {
+      position: absolute;
+      bottom: -30%;
+      left: 0;
+      content: "";
       width: 100%;
+      height: 2px;
+      background-color: index.$gray200;
     }
 
-    p {
-      color: #ff3600;
-      font-style: italic;
-      font-size: 14px;
-      font-weight: 500;
+    &::after {
+      position: absolute;
+      bottom: -30%;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: index.$brand100;
+      visibility: hidden;
+      transform: scaleX(0);
+      transform-origin: bottom left;
+      transition: all 0.25s ease-out;
     }
+
+    &:hover {
+      color: index.$brand200;
+      transition: all 0.3s;
+
+      &::after {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .tab-button.active {
+    color: index.$brand200;
+
+    &::before {
+      background-color: index.$brand200;
+    }
+  }
+
+  .tabs-images-grid {
+    width: 80%;
+    max-width: 1260px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px;
+  }
+
+  .tab-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 7/4;
+
+    object-fit: cover;
   }
 }
