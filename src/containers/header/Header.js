@@ -31,8 +31,8 @@ const Header = ({ isMobile, isOpen, onClickMenu }) => {
               <>
                 <Link to="/">HOME</Link>
                 <Link to="/company">COMPANY</Link>
-                <Link to="/project">PROJECT</Link>
-                <Link to="/notice">NOTICE</Link>
+                <Link to="/project">PRODUCTS</Link>
+                <Link to="/notice">NEWS</Link>
               </>
             )}
           </div>
