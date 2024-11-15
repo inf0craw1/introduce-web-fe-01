@@ -44,7 +44,7 @@ const iconData = [
 ];
 const Home = () => {
   return (
-    <div className="main">
+    <div className="main home">
       <div className="img-responsive">
         <div className="img-container">
           <img alt="MainImg" src={MainImg} />
@@ -57,7 +57,7 @@ const Home = () => {
                 <div className="font-display-lg">TRACKFARM</div>
               </div>
 
-              <button className="more-button font-text-md">
+              <button className="arrow-button font-text-md">
                 VIEW MORE
                 <ArrowIcon className="arrow-icon" />
               </button>
