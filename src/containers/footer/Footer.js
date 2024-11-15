@@ -4,7 +4,6 @@ import {
   LocationOn as LocationIcon,
   PhoneEnabled as PhoneIcon,
   Drafts as EmailIcon,
-  LayersOutlined,
 } from "@material-ui/icons";
 
 import Logo from "assets/trackfarm_logo.png";
