@@ -135,14 +135,33 @@ const Company = () => {
       <div className="solutions-container-2">
         <div className="solutions-below-overlay">
           <div className="layout">
-            <h3 className="font-display-lg">Our Solutions</h3>
+            <h3 className="title font-display-lg">Our Solutions</h3>
 
             <div className="solutions-item-wrapper">
               <div className="solutions-item">
-                <img alt="SolutionImage 1" src={SolutionImage1} />
+                <div className="image-overlay">
+                  <div className="content">
+                    <h3 className="font-display-sm">Deep Learning Solution</h3>
+                    <p classNmae="font-text-md">
+                      Track Farm monitors the movements of all pigs (one per
+                      132㎡) with AI cameras in the farm.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className="solutions-item">
-                <img alt="SolutionImage 2" src={SolutionImage2} />
+                <div className="image-overlay">
+                  <div className="content">
+                    <h3 className="font-display-sm">
+                      Improving the productivity of farms
+                    </h3>
+                    <p classNmae="font-text-md">
+                      Track Farm provides farmers with a daily report for each
+                      pig each day so that they can respond accurately and
+                      quickly
+                    </p>
+                  </div>{" "}
+                </div>
               </div>
             </div>
           </div>
