@@ -1,12 +1,105 @@
-import React from "react";
-
+import React, { useRef, useCallback } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Company.scss";
-
+import ArrowCircleIcon from "assets/arrow-circle.svg";
 import CompanyBackground from "assets/company_background.png";
-import SolutionImage1 from "assets/solution-image-1.png";
-import SolutionImage2 from "assets/solution-image-2.png";
 
+const historyData = [
+  {
+    year: "2022",
+    content: [
+      {
+        month: "01",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "02",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "03",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    content: [
+      {
+        month: "01",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "02",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "03",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    content: [
+      {
+        month: "01",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "02",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+      {
+        month: "03",
+        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+      },
+    ],
+  },
+];
+
+const SliderPrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    style={{ ...style, display: "block" }}
+    onClick={onClick}
+  >
+    <img
+      className="slider-arrow-icon prev"
+      src={ArrowCircleIcon}
+      alt="Previous button"
+    />
+  </div>
+);
+const SliderNextArrow = ({ className, style, onClick }) => (
+  <div className={className} style={{ ...style }} onClick={onClick}>
+    <img
+      className="slider-arrow-icon next"
+      src={ArrowCircleIcon}
+      alt="Next button"
+    />
+  </div>
+);
 const Company = () => {
+  const slickRef = useRef(null);
+
+  const handlePreviousClick = useCallback(
+    () => slickRef.current.slickPrev(),
+    []
+  );
+  const handleNextClick = useCallback(() => slickRef.current.slickNext(), []);
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
     <div className="main company">
       <div className="elementor-container">
@@ -22,7 +115,46 @@ const Company = () => {
           </h2>
         </div>
       </div>
-      <div className="company-history-container"></div>
+      <div className="company-history-container">
+        <div className="layout">
+          <div className="slider-wrapper">
+            <SliderPrevArrow onClick={handlePreviousClick} />
+            <Slider
+              className="slider-container"
+              {...sliderSettings}
+              ref={slickRef}
+            >
+              {historyData.map((data) => (
+                <div className="slider-item">
+                  <div className="content-wrapper">
+                    <div className="year-container">
+                      <div className="text-wrapper">
+                        <h4 className="font-display-sm">HISTORY</h4>
+                        <h3 className="font-display-lg">{data.year}</h3>
+                      </div>
+                    </div>
+
+                    <div className="history-container">
+                      <div className="history-month-line" />
+                      <div className="history-item-wrapper">
+                        {data.content.map((cur) => (
+                          <div className="history-item">
+                            <div className="history-month">
+                              <p className="font-text-md">{cur.month}</p>
+                            </div>
+                            <div className="history-text">{cur.text}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+            <SliderNextArrow onClick={handleNextClick} />
+          </div>
+        </div>
+      </div>
       {/* <div className="discription-container">
         <div className="discription-wrapper">
           <div className="discription-left">
