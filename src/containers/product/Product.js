@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import { Link } from "components";
-
 import MainImg from "assets/product-main-image.png";
 
 import Img1_1 from "assets/project01-1.png";
@@ -62,7 +60,7 @@ const Product = () => {
         </div>
         <div className="tabs-images-grid">
           {imageData[activeTab].src.map((img, index) => (
-            <div className="image-container">
+            <div className="image-container" key={index}>
               <img src={img} alt={index} className="tab-image" />
             </div>
           ))}

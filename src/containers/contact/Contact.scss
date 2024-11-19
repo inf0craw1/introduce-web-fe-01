@@ -1,0 +1,49 @@
+@use "/src/index";
+
+.contact {
+  position: relative;
+  width: 100%;
+
+  background-color: index.$black;
+  color: index.$white;
+
+  .contact-info-wrapper {
+    width: 50%;
+  }
+
+  .contact-content {
+    width: 80%;
+    max-width: 1260px;
+    padding: 198px 0 100px 0;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-info-text {
+  }
+  .contact-title {
+    margin-bottom: 40px;
+  }
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 12px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: index.$brand200;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .contact-form {
+    width: 40%;
+    background-color: index.$white;
+    border-radius: 4px;
+  }
+}
