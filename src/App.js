@@ -10,6 +10,7 @@ function App() {
         <Route exact path="/company" component={Main} />
         <Route exact path="/product" component={Main} />
         <Route exact path="/news" component={Main} />
+        <Route exact path="/contact" component={Main} />
       </Switch>
     </BrowserRouter>
   );

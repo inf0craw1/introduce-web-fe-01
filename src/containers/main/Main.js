@@ -10,6 +10,7 @@ import Home from "containers/home";
 import Company from "containers/company";
 import Product from "containers/product";
 import News from "containers/news";
+import Contact from "containers/contact";
 
 import "./Main.scss";
 
@@ -18,6 +19,7 @@ const PAGES = {
   "/company": Company,
   "/product": Product,
   "/news": News,
+  "/contact": Contact,
 };
 
 const Main = ({ match: { path } }) => {
