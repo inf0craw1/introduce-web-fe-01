@@ -8,19 +8,43 @@ import CompanyBackground from "assets/company_background.png";
 
 const historyData = [
   {
-    year: "2022",
+    year: "2024",
     content: [
       {
         month: "01",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        text: "CES 2024",
       },
       {
         month: "02",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        text: "Pangyo Research Institute Lab Establishment",
       },
       {
         month: "03",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        text: "Collabo R&D (SMES)",
+      },
+      {
+        month: "04",
+        text: "Agriculture Startup Package (KOAT)",
+      },
+      {
+        month: "05",
+        text: "Data Voucher",
+      },
+      {
+        month: "06",
+        text: "KSC Program (Vietnam)",
+      },
+      {
+        month: "07",
+        text: "Shinhan Square Bridge (Vietnam)",
+      },
+      {
+        month: "08",
+        text: "Global Didimdol R&D (SMES)",
+      },
+      {
+        month: "09",
+        text: "Vietnam Solution Launching",
       },
     ],
   },
@@ -28,33 +52,82 @@ const historyData = [
     year: "2023",
     content: [
       {
-        month: "01",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
-      },
-      {
-        month: "02",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
-      },
-      {
         month: "03",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        text: "Didimdol R&D (SMES)",
+      },
+      {
+        month: "04",
+        text: "Untact Startup Package (KOAT)",
+      },
+      {
+        month: "09",
+        text: "Seed Investment (HYUH)",
+      },
+      {
+        month: "10",
+        text: "TIPS R&D",
+      },
+      {
+        month: "11",
+        text: "KOICA CTS SEED 0",
+      },
+      {
+        month: "11",
+        text: "Certificate of Venture Enterprise",
+      },
+      {
+        month: "12",
+        text: "Gangwon Farm Complete",
       },
     ],
   },
   {
-    year: "2024",
+    year: "2022",
     content: [
       {
-        month: "01",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        month: "04",
+        text: "Global Startup Academy",
       },
       {
-        month: "02",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        month: "05",
+        text: "Agriculture Startup Package (KOAT)",
       },
       {
-        month: "03",
-        text: "Track Farm monitors the movements of all pigs with AI cameras in the farm",
+        month: "06",
+        text: "Yeonsu-gu Young Tech Stratup Program (INU)",
+      },
+      {
+        month: "07",
+        text: "Seoul Campus Town",
+      },
+      {
+        month: "11",
+        text: "ISO 9001, ISO 14001",
+      },
+    ],
+  },
+  {
+    year: "2021",
+    content: [
+      {
+        month: "04",
+        text: "Preliminary start-up package",
+      },
+      {
+        month: "07",
+        text: "1st K-startup Edu Program",
+      },
+      {
+        month: "12",
+        text: "Establishment of a corporation",
+      },
+      {
+        month: "12",
+        text: "Acquisition of Patent Solution",
+      },
+      {
+        month: "12",
+        text: "Incorporation of subsidiaries (HYUH)",
       },
     ],
   },
@@ -107,9 +180,9 @@ const Company = () => {
           <img alt="CompanyBackground" src={CompanyBackground} />
         </div>
         <div className="elementor-title-wrapper">
-          <p className="font-display-xs">TRACKFARM LAB</p>
+          <p className="font-display-xs">TRACKFARM MISSION</p>
           <h2 className="font-display-lg">
-            Join the Innovative & sustainable
+            Change the farming system for Sustainable Livestock & Environment
             <br />
             Farming solution
           </h2>
@@ -208,10 +281,11 @@ const Company = () => {
       <div className="solutions-container">
         <div className="layout">
           <p className="solutions-subtitle font-display-xs">
-            Innovation for future Livestock
+            Innovation for Future Farming
           </p>
           <h3 className="solutions-title font-display-lg">
-            We solve many problems of pig farms
+            We solve many problems in livestock farms and think about better
+            agriculture industry
           </h3>
 
           <div className="solution-item-wrapper">

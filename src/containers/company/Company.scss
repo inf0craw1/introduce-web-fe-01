@@ -98,9 +98,9 @@
 
                 .history-month-line {
                   position: absolute;
-                  top: 10%;
+                  top: 4%;
                   left: 20px;
-                  height: 80%;
+                  height: 92%;
                   border-left: 1px solid index.$black;
                   z-index: -1;
                 }
@@ -115,7 +115,7 @@
                     gap: 16px;
 
                     &+div {
-                      margin-top: 60px;
+                      margin-top: 40px;
                     }
 
 
