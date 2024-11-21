@@ -1,9 +1,7 @@
 @use "/src/index";
 
 .contact {
-  position: relative;
   width: 100%;
-
   background-color: index.$black;
   color: index.$white;
 
@@ -12,6 +10,8 @@
   }
 
   .contact-content {
+    position: relative;
+
     width: 80%;
     max-width: 1260px;
     padding: 198px 0 100px 0;
@@ -20,18 +20,22 @@
     display: flex;
     justify-content: space-between;
   }
+
   .contact-info-text {
+    margin-bottom: 40px;
   }
+
   .contact-title {
     margin-bottom: 40px;
   }
+
   .contact-info-item {
     display: flex;
     align-items: center;
     gap: 6px;
-
     margin-bottom: 12px;
   }
+
   .icon {
     width: 20px;
     height: 20px;
@@ -41,9 +45,134 @@
       height: 20px;
     }
   }
+
   .contact-form {
     width: 40%;
-    background-color: index.$white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 4px;
+    color: index.$white;
+
+    border: 2px solid index.$gray200;
+
+    form {
+      width: 85%;
+      padding: 46px 0;
+      min-height: 200px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 20px;
+      margin: 0 auto;
+      margin-bottom: 12px;
+
+      border-radius: 4px;
+      border: 1px solid index.$gray200;
+      outline: none;
+
+      background-color: transparent;
+      color: index.$white;
+
+      &:focus {
+        border: 1px solid index.$brand200;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: index.$white;
+    border: 1px solid index.$gray200;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: index.$brand200;
+    }
+  }
+
+  input[type="checkbox"]:checked + span {
+    background-color: index.$brand200;
+    border-color: index.$brand200;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      color: index.$white;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .checkbox-text {
+    color: index.$gray200;
+  }
+
+  .submit-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border: 1px solid index.$gray200;
+    padding: 7px 20px;
+
+    background: transparent;
+    color: index.$gray200;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid index.$brand200;
+      color: index.$brand200;
+    }
+  }
+
+  .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 }
