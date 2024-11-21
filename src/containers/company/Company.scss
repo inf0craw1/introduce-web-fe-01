@@ -6,6 +6,7 @@
   .layout {
     width: 100%;
     max-width: 1260px;
+    margin: auto;
   }
 
   .elementor-container {
@@ -46,6 +47,111 @@
 
       color: index.$white;
     }
+  }
+
+  .company-history-container {
+    background: linear-gradient(270deg, #76D446, #3D6E24);
+    padding: 76px 0;
+
+    .layout {
+      .slick-track {
+        display: flex;
+      }
+
+      .slick-track .slick-slide {
+        display: flex;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+
+        .slider-container {
+          width: 80%;
+          margin: auto;
+
+          .slider-item {
+            height: 100%;
+
+            .content-wrapper {
+              display: flex;
+              height: 100%;
+
+              &>div {
+                width: 100%;
+              }
+
+              .year-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+              }
+
+              .history-container {
+                position: relative;
+
+                .history-month-line {
+                  position: absolute;
+                  top: 4%;
+                  left: 20px;
+                  height: 92%;
+                  border-left: 1px solid index.$black;
+                  z-index: -1;
+                }
+
+                .history-item-wrapper {
+                  margin: auto;
+
+                  .history-item {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 16px;
+
+                    &+div {
+                      margin-top: 40px;
+                    }
+
+
+                    .history-month {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 40px;
+                      height: 40px;
+                      background: #5ca436;
+
+                      border: 1px solid index.$black;
+                      border-radius: 100%;
+                    }
+
+                    .history-text {
+                      width: calc(100% - 56px);
+                    }
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .slider-arrow-icon {
+        cursor: pointer;
+
+        &.prev {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
   }
 
   .discription-container {

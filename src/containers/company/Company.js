@@ -1,12 +1,178 @@
-import React from "react";
-
+import React, { useRef, useCallback } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Company.scss";
-
+import ArrowCircleIcon from "assets/arrow-circle.svg";
 import CompanyBackground from "assets/company_background.png";
-import SolutionImage1 from "assets/solution-image-1.png";
-import SolutionImage2 from "assets/solution-image-2.png";
 
+const historyData = [
+  {
+    year: "2024",
+    content: [
+      {
+        month: "01",
+        text: "CES 2024",
+      },
+      {
+        month: "02",
+        text: "Pangyo Research Institute Lab Establishment",
+      },
+      {
+        month: "03",
+        text: "Collabo R&D (SMES)",
+      },
+      {
+        month: "04",
+        text: "Agriculture Startup Package (KOAT)",
+      },
+      {
+        month: "05",
+        text: "Data Voucher",
+      },
+      {
+        month: "06",
+        text: "KSC Program (Vietnam)",
+      },
+      {
+        month: "07",
+        text: "Shinhan Square Bridge (Vietnam)",
+      },
+      {
+        month: "08",
+        text: "Global Didimdol R&D (SMES)",
+      },
+      {
+        month: "09",
+        text: "Vietnam Solution Launching",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    content: [
+      {
+        month: "03",
+        text: "Didimdol R&D (SMES)",
+      },
+      {
+        month: "04",
+        text: "Untact Startup Package (KOAT)",
+      },
+      {
+        month: "09",
+        text: "Seed Investment (HYUH)",
+      },
+      {
+        month: "10",
+        text: "TIPS R&D",
+      },
+      {
+        month: "11",
+        text: "KOICA CTS SEED 0",
+      },
+      {
+        month: "11",
+        text: "Certificate of Venture Enterprise",
+      },
+      {
+        month: "12",
+        text: "Gangwon Farm Complete",
+      },
+    ],
+  },
+  {
+    year: "2022",
+    content: [
+      {
+        month: "04",
+        text: "Global Startup Academy",
+      },
+      {
+        month: "05",
+        text: "Agriculture Startup Package (KOAT)",
+      },
+      {
+        month: "06",
+        text: "Yeonsu-gu Young Tech Stratup Program (INU)",
+      },
+      {
+        month: "07",
+        text: "Seoul Campus Town",
+      },
+      {
+        month: "11",
+        text: "ISO 9001, ISO 14001",
+      },
+    ],
+  },
+  {
+    year: "2021",
+    content: [
+      {
+        month: "04",
+        text: "Preliminary start-up package",
+      },
+      {
+        month: "07",
+        text: "1st K-startup Edu Program",
+      },
+      {
+        month: "12",
+        text: "Establishment of a corporation",
+      },
+      {
+        month: "12",
+        text: "Acquisition of Patent Solution",
+      },
+      {
+        month: "12",
+        text: "Incorporation of subsidiaries (HYUH)",
+      },
+    ],
+  },
+];
+
+const SliderPrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    style={{ ...style, display: "block" }}
+    onClick={onClick}
+  >
+    <img
+      className="slider-arrow-icon prev"
+      src={ArrowCircleIcon}
+      alt="Previous button"
+    />
+  </div>
+);
+const SliderNextArrow = ({ className, style, onClick }) => (
+  <div className={className} style={{ ...style }} onClick={onClick}>
+    <img
+      className="slider-arrow-icon next"
+      src={ArrowCircleIcon}
+      alt="Next button"
+    />
+  </div>
+);
 const Company = () => {
+  const slickRef = useRef(null);
+
+  const handlePreviousClick = useCallback(
+    () => slickRef.current.slickPrev(),
+    []
+  );
+  const handleNextClick = useCallback(() => slickRef.current.slickNext(), []);
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
     <div className="main company">
       <div className="elementor-container">
@@ -14,15 +180,54 @@ const Company = () => {
           <img alt="CompanyBackground" src={CompanyBackground} />
         </div>
         <div className="elementor-title-wrapper">
-          <p className="font-display-xs">TRACKFARM LAB</p>
+          <p className="font-display-xs">TRACKFARM MISSION</p>
           <h2 className="font-display-lg">
-            Join the Innovative & sustainable
+            Change the farming system for Sustainable Livestock & Environment
             <br />
             Farming solution
           </h2>
         </div>
       </div>
-      <div className="company-history-container"></div>
+      <div className="company-history-container">
+        <div className="layout">
+          <div className="slider-wrapper">
+            <SliderPrevArrow onClick={handlePreviousClick} />
+            <Slider
+              className="slider-container"
+              {...sliderSettings}
+              ref={slickRef}
+            >
+              {historyData.map((data) => (
+                <div className="slider-item">
+                  <div className="content-wrapper">
+                    <div className="year-container">
+                      <div className="text-wrapper">
+                        <h4 className="font-display-sm">HISTORY</h4>
+                        <h3 className="font-display-lg">{data.year}</h3>
+                      </div>
+                    </div>
+
+                    <div className="history-container">
+                      <div className="history-month-line" />
+                      <div className="history-item-wrapper">
+                        {data.content.map((cur) => (
+                          <div className="history-item">
+                            <div className="history-month">
+                              <p className="font-text-md">{cur.month}</p>
+                            </div>
+                            <div className="history-text">{cur.text}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+            <SliderNextArrow onClick={handleNextClick} />
+          </div>
+        </div>
+      </div>
       {/* <div className="discription-container">
         <div className="discription-wrapper">
           <div className="discription-left">
@@ -76,10 +281,11 @@ const Company = () => {
       <div className="solutions-container">
         <div className="layout">
           <p className="solutions-subtitle font-display-xs">
-            Innovation for future Livestock
+            Innovation for Future Farming
           </p>
           <h3 className="solutions-title font-display-lg">
-            We solve many problems of pig farms
+            We solve many problems in livestock farms and think about better
+            agriculture industry
           </h3>
 
           <div className="solution-item-wrapper">
