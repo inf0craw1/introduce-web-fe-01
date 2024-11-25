@@ -21,6 +21,20 @@
     justify-content: space-between;
   }
 
+  .info-window {
+    color: index.$black;
+  }
+
+  .gm-style-iw-chr button {
+    width: 20px !important ;
+    height: 20px !important ;
+  }
+  .gm-style-iw-chr button span {
+    margin: 0px !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
   .contact-info-text {
     margin-bottom: 40px;
   }
@@ -152,10 +166,18 @@
       border: 1px solid index.$brand200;
       color: index.$brand200;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: index.$gray200;
+      color: index.$gray300;
+      border: 1px solid index.$gray300;
+      opacity: 0.6;
+    }
   }
 
   .modal-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -164,11 +186,15 @@
     justify-content: center;
     align-items: center;
 
+    width: 100vw;
+    height: 100vh;
+
     z-index: 999;
   }
 
   .modal-content {
-    background-color: white;
+    background-color: index.$white;
+    color: index.$black;
     padding: 20px;
     border-radius: 8px;
     text-align: center;

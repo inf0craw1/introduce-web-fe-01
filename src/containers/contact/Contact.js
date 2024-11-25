@@ -9,16 +9,41 @@ const Contact = () => {
   const mapRef = useRef(null);
 
   const initMap = useCallback(() => {
-    const location = { lat: 36.7899054, lng: 127.1072841 };
+    const locations = [
+      { name: "Head Office", position: { lat: 36.7899054, lng: 127.1072841 } },
+      {
+        name: "Laboratory",
+        position: { lat: 37.41386594530962, lng: 127.09866353717115 },
+      },
+      {
+        name: "R&D Farm",
+        position: { lat: 37.52386160007372, lng: 127.98114943848411 },
+      },
+    ];
 
     const map = new window.google.maps.Map(mapRef.current, {
-      center: location,
-      zoom: 15,
+      center: locations[1].position,
+      zoom: 7.5,
     });
+    locations.forEach((location) => {
+      const contentString = `<div class='info-window'>
+      ${location.name}</div>`;
 
-    new window.google.maps.Marker({
-      position: location,
-      map,
+      const infowindow = new window.google.maps.InfoWindow({
+        content: contentString,
+      });
+
+      const marker = new window.google.maps.Marker({
+        position: location.position,
+        map,
+      });
+
+      marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+        });
+      });
     });
   }, [mapRef]);
 
@@ -36,16 +61,15 @@ const Contact = () => {
     agreeToTerms: false,
   });
 
-  const sendVerificationEmail = () => {
+  const sendEmail = () => {
     const templateParams = {
-      to_email: "inf0craw1@naver.com",
+      to_email: "bsu0404@naver.com",
       message: formData.message,
       phone_number: formData.phone,
       from_name: formData.name,
       email: formData.email,
     };
 
-    setIsSubmitting(true);
     emailjs
       .send(
         "service_1qkwh6k",
@@ -74,7 +98,8 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (formData.agreeToTerms) {
-      sendVerificationEmail();
+      setIsSubmitting(true);
+      sendEmail();
     } else {
       alert("You must agree to the terms and conditions before submitting.");
     }
@@ -188,7 +213,7 @@ const Contact = () => {
         {isEmailSent && (
           <div className="modal-overlay">
             <div className="modal-content">
-              <p>인증 이메일이 성공적으로 발송되었습니다.</p>
+              <p>Your email has been sent successfully.</p>
             </div>
           </div>
         )}
