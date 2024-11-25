@@ -16,9 +16,9 @@ import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
 import "./Product.scss";
 
 const imageData = [
-  { src: [Img1_1, Img1_2] },
-  { src: [Img2_1, Img2_2, Img2_3, Img2_4] },
-  { src: [Img3_1, Img3_2] },
+  { project_name: "DayFarm SW", src: [Img1_1, Img1_2] },
+  { project_name: "DayFarm IoT", src: [Img2_1, Img2_2, Img2_3, Img2_4] },
+  { project_name: "DayFarm ColdChian", src: [Img3_1, Img3_2] },
 ];
 
 const Product = () => {
@@ -54,7 +54,7 @@ const Product = () => {
               className={`tab-button ${activeTab === index ? "active" : ""}`}
               onClick={() => setActiveTab(index)}
             >
-              PRODUCT 0{index + 1}
+              {_.project_name}
             </button>
           ))}
         </div>
