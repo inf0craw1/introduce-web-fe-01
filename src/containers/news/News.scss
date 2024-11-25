@@ -60,10 +60,13 @@
     margin-bottom: 30px;
     overflow: hidden;
 
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      transition: all 0.2s;
 
       &.contain-fit {
         background-color: index.$white;
