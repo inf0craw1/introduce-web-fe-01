@@ -181,4 +181,10 @@
 
     object-fit: cover;
   }
+  .preparing-message {
+    padding: 100px 0;
+
+    color: index.$white;
+    text-align: center;
+  }
 }
