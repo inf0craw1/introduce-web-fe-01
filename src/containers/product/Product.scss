@@ -29,17 +29,18 @@
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.65) 0%,
-      rgba(0, 0, 0, 0.65) 90%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.65) 90%,
+        rgba(0, 0, 0, 1) 100%);
   }
 
   .background-overlay-content {
     width: 80%;
     max-width: 1260px;
+
+    padding-left: 36px;
+    padding-right: 36px;
     margin: 0 auto;
 
     color: index.$white;
@@ -102,6 +103,9 @@
   .tabs {
     width: 80%;
     max-width: 1260px;
+
+    padding-left: 36px;
+    padding-right: 36px;
 
     margin: 0 auto;
     display: flex;
@@ -166,6 +170,8 @@
   .tabs-images-grid {
     width: 80%;
     max-width: 1260px;
+    padding-left: 36px;
+    padding-right: 36px;
 
     margin: 0 auto;
 

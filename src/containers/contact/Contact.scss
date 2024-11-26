@@ -14,7 +14,7 @@
 
     width: 80%;
     max-width: 1260px;
-    padding: 198px 0 100px 0;
+    padding: 198px 36px 100px 36px;
     margin: 0 auto;
 
     display: flex;
@@ -40,6 +40,7 @@
     width: 20px;
     height: 20px;
     fill: index.$brand200;
+
     svg {
       width: 20px;
       height: 20px;
@@ -88,6 +89,7 @@
       resize: none;
     }
   }
+
   .checkbox-wrapper {
     display: flex;
     align-items: center;
@@ -95,11 +97,12 @@
     margin-top: 6px;
     margin-bottom: 24px;
   }
+
   input[type="checkbox"] {
     display: none;
   }
 
-  input[type="checkbox"] + span {
+  input[type="checkbox"]+span {
     position: relative;
     width: 20px;
     height: 20px;
@@ -118,7 +121,7 @@
     }
   }
 
-  input[type="checkbox"]:checked + span {
+  input[type="checkbox"]:checked+span {
     background-color: index.$brand200;
     border-color: index.$brand200;
 
@@ -130,6 +133,7 @@
       font-weight: bold;
     }
   }
+
   .checkbox-text {
     color: index.$gray200;
   }

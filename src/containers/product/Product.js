@@ -18,7 +18,7 @@ import "./Product.scss";
 const imageData = [
   { project_name: "DayFarm SW", src: [Img1_1, Img1_2] },
   { project_name: "DayFarm IoT", src: [Img2_1, Img2_2, Img2_3, Img2_4] },
-  { project_name: "DayFarm ColdChian", src: [Img3_1, Img3_2] },
+  { project_name: "DayFarm ColdChain", src: [Img3_1, Img3_2] },
 ];
 
 const Product = () => {
