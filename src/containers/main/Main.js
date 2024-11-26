@@ -75,6 +75,7 @@ const Main = ({ match: { path } }) => {
         <Link to="/company">COMPANY</Link>
         <Link to="/product">PRODUCTS</Link>
         <Link to="/news">NEWS</Link>
+        <Link to="/contact">CONTACT</Link>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ html {
 }
 
 .green-2 {
-  color: #98CA7C;
+  color: #98ca7c;
 }
 
 .main-wrapper {
@@ -58,7 +58,7 @@ html {
     cursor: pointer;
 
     &:hover {
-      color: #13aff0;
+      color: index.$brand200;
     }
   }
 }
@@ -71,7 +71,7 @@ html {
   .content-divider-content {
     flex-direction: column;
 
-    &>div {
+    & > div {
       margin-right: 0;
     }
 
@@ -87,7 +87,7 @@ html {
   .background-overlay-content {
     flex-direction: column;
 
-    &>div {
+    & > div {
       display: flex;
       flex-direction: column;
       align-items: center;
