@@ -2,23 +2,23 @@ import React, { useState } from "react";
 
 import MainImg from "assets/product-main-image.png";
 
-import Img1_1 from "assets/project01-1.png";
-import Img1_2 from "assets/project01-2.png";
-import Img2_1 from "assets/project02-1.png";
-import Img2_2 from "assets/project02-2.png";
-import Img2_3 from "assets/project02-3.jpg";
-import Img2_4 from "assets/project02-4.jpg";
-import Img3_1 from "assets/project03-1.jpg";
-import Img3_2 from "assets/project03-2.jpg";
+import Img1 from "assets/product/01.png";
+import Img2 from "assets/product/02.png";
+import Img3 from "assets/product/03.png";
+import Img4 from "assets/product/04.png";
+import Img5 from "assets/product/05.png";
+import Img6 from "assets/product/06.png";
+import Img7 from "assets/product/07.jpg";
+import Img8 from "assets/product/08.jpg";
 
 import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
 
 import "./Product.scss";
 
 const imageData = [
-  { project_name: "DayFarm SW", src: [Img1_1, Img1_2] },
-  { project_name: "DayFarm IoT", src: [Img2_1, Img2_2, Img2_3, Img2_4] },
-  { project_name: "DayFarm ColdChian", src: [Img3_1, Img3_2] },
+  { project_name: "DayFarm SW", images: [Img1, Img2, Img3, Img4] },
+  { project_name: "DayFarm IoT", images: [Img5, Img6, Img7, Img8] },
+  { project_name: "DayFarm ColdChain", images: null },
 ];
 
 const Product = () => {
@@ -58,13 +58,17 @@ const Product = () => {
             </button>
           ))}
         </div>
-        <div className="tabs-images-grid">
-          {imageData[activeTab].src.map((img, index) => (
-            <div className="image-container" key={index}>
-              <img src={img} alt={index} className="tab-image" />
-            </div>
-          ))}
-        </div>
+        {imageData[activeTab].images != null ? (
+          <div className="tabs-images-grid">
+            {imageData[activeTab].images.map((img, index) => (
+              <div className="image-container" key={index}>
+                <img src={img} alt={index} className="tab-image" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="preparing-message font-display-sm">Preparing</div>
+        )}
       </div>
     </div>
   );

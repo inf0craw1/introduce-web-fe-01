@@ -134,6 +134,16 @@
     margin-bottom: 80px;
 
     color: index.$gray300;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      fill: index.$gray300;
+    }
   }
 
   .content-img-wrapper {

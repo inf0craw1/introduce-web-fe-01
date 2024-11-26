@@ -37,9 +37,9 @@ const Header = ({ isMobile, isOpen, onClickMenu }) => {
             )}
           </div>
           {isMobile ? null : (
-            <a href="/contact" className="contact-button font-text-md">
-              CONTACT
-            </a>
+            <Link to="/contact">
+              <div className="contact-button font-text-md">CONTACT</div>
+            </Link>
           )}
         </div>
       </div>

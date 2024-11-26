@@ -5,20 +5,69 @@ import { ReactComponent as EmailIcon } from "assets/email.svg";
 import emailjs from "emailjs-com";
 import "./Contact.scss";
 
+import Img1 from "assets/contact/farm1.png";
+import Img2 from "assets/contact/farm2.png";
+import Img3 from "assets/contact/farm3.png";
+import Img4 from "assets/contact/farm4.png";
+
+const contactImgs = [Img1, Img2, Img3, Img4];
+
+const contactDetails = [
+  { icon: <CallIcon />, text: "(Tel) 010-2088-9798" },
+  { icon: <EmailIcon />, text: "trackfarm@naver.com" },
+  {
+    icon: <LocationIcon />,
+    text: "HeadOffice: Chungcheongnam-do Asan-si Baebangeup Heemangro 46beongil 45-11, 502",
+  },
+  {
+    icon: <LocationIcon />,
+    text: "Laboratory: Gyeonggi-do Seongnam-si Sujeonggu Daewangpangyoro 815, Pangyo Startup-zone, 832",
+  },
+  {
+    icon: <LocationIcon />,
+    text: "R&D Farm: Gangwon-do Hoengseong-gun Gonggeunmyeon Osanri 262-13",
+  },
+];
+
 const Contact = () => {
   const mapRef = useRef(null);
 
   const initMap = useCallback(() => {
-    const location = { lat: 36.7899054, lng: 127.1072841 };
+    const locations = [
+      { name: "Head Office", position: { lat: 36.7899054, lng: 127.1072841 } },
+      {
+        name: "Laboratory",
+        position: { lat: 37.41386594530962, lng: 127.09866353717115 },
+      },
+      {
+        name: "R&D Farm",
+        position: { lat: 37.52386160007372, lng: 127.98114943848411 },
+      },
+    ];
 
     const map = new window.google.maps.Map(mapRef.current, {
-      center: location,
-      zoom: 15,
+      center: locations[1].position,
+      zoom: 7.5,
     });
+    locations.forEach((location) => {
+      const contentString = `<div class='info-window'>
+      ${location.name}</div>`;
 
-    new window.google.maps.Marker({
-      position: location,
-      map,
+      const infowindow = new window.google.maps.InfoWindow({
+        content: contentString,
+      });
+
+      const marker = new window.google.maps.Marker({
+        position: location.position,
+        map,
+      });
+
+      marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+        });
+      });
     });
   }, [mapRef]);
 
@@ -36,16 +85,15 @@ const Contact = () => {
     agreeToTerms: false,
   });
 
-  const sendVerificationEmail = () => {
+  const sendEmail = () => {
     const templateParams = {
-      to_email: "inf0craw1@naver.com",
+      to_email: "bsu0404@naver.com",
       message: formData.message,
       phone_number: formData.phone,
       from_name: formData.name,
       email: formData.email,
     };
 
-    setIsSubmitting(true);
     emailjs
       .send(
         "service_1qkwh6k",
@@ -74,7 +122,8 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (formData.agreeToTerms) {
-      sendVerificationEmail();
+      setIsSubmitting(true);
+      sendEmail();
     } else {
       alert("You must agree to the terms and conditions before submitting.");
     }
@@ -95,19 +144,12 @@ const Contact = () => {
           <div className="contact-info-text">
             <div className="contact-title font-display-lg">Contact us</div>
             <div className="contact-detail font-text-md">
-              <div className="contact-info-item">
-                <CallIcon className="icon" />
-                (Tel) 010-2088-9798
-              </div>
-              <div className="contact-info-item">
-                <EmailIcon className="icon" />
-                trackfarm@naver.com
-              </div>
-              <div className="contact-info-item">
-                <LocationIcon className="icon" />
-                Chungcheongnam-do Asan-si Baebangeup Heemangro 46beongil 45-11,
-                502
-              </div>
+              {contactDetails.map((item, index) => (
+                <div className="contact-info-item" key={index}>
+                  <div className="icon">{item.icon}</div>
+                  {item.text}
+                </div>
+              ))}
             </div>
           </div>
           <div
@@ -188,10 +230,23 @@ const Contact = () => {
         {isEmailSent && (
           <div className="modal-overlay">
             <div className="modal-content">
-              <p>인증 이메일이 성공적으로 발송되었습니다.</p>
+              <p>Your email has been sent successfully.</p>
             </div>
           </div>
         )}
+      </div>
+      <div className="content-below-container">
+        <div className="background-overlay"></div>
+        <div className="img-content">
+          <div className="img-title font-display-lg">TRACK FARM</div>
+          <div className="img-container">
+            {contactImgs.map((item, index) => (
+              <div key={index} className="img-item">
+                <img src={item} alt={`img${index + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
