@@ -5,14 +5,14 @@
     height: 700px;
     overflow: hidden;
   }
-  
+
   .iframe-container {
     position: absolute;
     width: 100%;
     min-width: 1320px;
     height: 100%;
-  
-    & > iframe {
+
+    &>iframe {
       height: 155%;
     }
   }
@@ -51,7 +51,7 @@
     width: 100%;
     background-color: #fff;
   }
-  
+
   .content-divider {
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@
     display: flex;
     justify-content: space-between;
 
-    & > div {
+    &>div {
       flex: 1;
       display: flex;
       flex-direction: column;

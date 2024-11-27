@@ -19,7 +19,7 @@
       margin-bottom: 0.4em;
     }
 
-    & > div {
+    &>div {
       font-size: 13px;
     }
 
@@ -67,14 +67,14 @@
       flex-direction: column;
       width: 80%;
     }
-  
+
     .content-divider-title {
       margin-bottom: 16px;
       color: #000;
       font-size: 32px;
       font-weight: 600;
     }
-  
+
     .content-divider-content {
       display: flex;
       justify-content: space-between;
@@ -94,19 +94,19 @@
           }
         }
       }
-  
-      & > div {
+
+      &>div {
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-right: 40px;
-  
+
         &:last-of-type {
           margin-right: 0;
         }
       }
-  
+
       .img {
         overflow: hidden;
         flex: 1;
@@ -116,7 +116,7 @@
           height: auto;
         }
       }
-  
+
       p {
         text-align: center;
         color: #404040;

@@ -1,5 +1,11 @@
+@use "/src/index";
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  background: index.$gray400;
 }
 
 .orange-1 {
@@ -7,7 +13,7 @@
 }
 
 .green-2 {
-  color: #98CA7C;
+  color: #98ca7c;
 }
 
 .main-wrapper {
@@ -48,11 +54,11 @@
   .link {
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.035);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.035);
     cursor: pointer;
 
     &:hover {
-      color: #13aff0;
+      color: index.$brand200;
     }
   }
 }
@@ -105,8 +111,10 @@
   .grid-container {
     .grid-row {
       display: block;
+
       .grid-item {
         width: 100%;
+
         .item-wrapper {
           padding: 2em;
         }
@@ -116,10 +124,12 @@
 
   .discription-wrapper {
     display: block;
+
     .discription-left {
       width: 100%;
     }
-    .discription-right{
+
+    .discription-right {
       width: 100%;
       margin-top: 1.5em;
     }
