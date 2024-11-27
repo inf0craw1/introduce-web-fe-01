@@ -6,6 +6,8 @@
   .layout {
     width: 100%;
     max-width: 1260px;
+    padding-left: 36px;
+    padding-right: 36px;
     margin: auto;
   }
 
@@ -322,6 +324,41 @@
 
             }
           }
+        }
+      }
+    }
+  }
+
+  .partners-container {
+
+    background: index.$white;
+
+    .layout {
+      max-width: 1260px;
+      padding: 100px 36px 100px 36px;
+
+
+      .partners-slider-item {
+        width: 120px;
+        min-height: 200px;
+
+        .partners-image-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 100%;
+          min-height: 200px;
+          height: 100%;
+
+          .partners-slider-image {
+            width: 100%;
+            height: auto;
+            padding: 0 40px;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+
         }
       }
     }

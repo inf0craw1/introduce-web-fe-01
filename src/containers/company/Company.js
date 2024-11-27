@@ -6,6 +6,23 @@ import "./Company.scss";
 import ArrowCircleIcon from "assets/arrow-circle.svg";
 import CompanyBackground from "assets/company_background.png";
 
+import partnerImg1 from "assets/partners/01.png";
+import partnerImg2 from "assets/partners/02.jpg";
+import partnerImg3 from "assets/partners/03.png";
+import partnerImg4 from "assets/partners/04.png";
+import partnerImg5 from "assets/partners/05.png";
+import partnerImg6 from "assets/partners/06.png";
+import partnerImg7 from "assets/partners/07.png";
+import partnerImg8 from "assets/partners/08.png";
+import partnerImg9 from "assets/partners/09.png";
+import partnerImg10 from "assets/partners/10.png";
+import partnerImg11 from "assets/partners/11.png";
+import partnerImg12 from "assets/partners/12.png";
+import partnerImg13 from "assets/partners/13.png";
+import partnerImg14 from "assets/partners/14.png";
+import partnerImg15 from "assets/partners/15.png";
+import partnerImg16 from "assets/partners/16.png";
+
 const historyData = [
   {
     year: "2024",
@@ -133,6 +150,24 @@ const historyData = [
   },
 ];
 
+const partners = [
+  { img: partnerImg1 },
+  { img: partnerImg2 },
+  { img: partnerImg3 },
+  { img: partnerImg4 },
+  { img: partnerImg5 },
+  { img: partnerImg6 },
+  { img: partnerImg7 },
+  { img: partnerImg8 },
+  { img: partnerImg9 },
+  { img: partnerImg10 },
+  { img: partnerImg11 },
+  { img: partnerImg12 },
+  { img: partnerImg13 },
+  { img: partnerImg14 },
+  { img: partnerImg15 },
+  { img: partnerImg16 },
+];
 const SliderPrevArrow = ({ className, style, onClick }) => (
   <div
     className={className}
@@ -170,6 +205,16 @@ const Company = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+  };
+
+  const partnersSliderSettings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 5,
+    autoplay: true,
+    speed: 800,
+    autoplaySpeed: 800,
     arrows: false,
   };
 
@@ -228,56 +273,6 @@ const Company = () => {
           </div>
         </div>
       </div>
-      {/* <div className="discription-container">
-        <div className="discription-wrapper">
-          <div className="discription-left">
-            <h3 className="discription-heading">
-              Innovation for future Livestock
-            </h3>
-            <h2 className="discription-heading-2">
-              Innovative & sustainable
-              <br />
-              Farming solution Provider
-            </h2>
-            <img className="logo" src={Logo} alt="logo" />
-            <br />
-            <Link className="about-btn" to="/notice">
-              About Us
-            </Link>
-          </div>
-          <div className="discription-right">
-            <p className="bold">Serious employment reality of pig farms</p>
-            <p>
-              Livestock industry of pig farms is shrinking. The decline and
-              aging of the farm labor population, and the 3D industry have led
-              to severe reluctance among young farmers and foreign workers, but
-              they are experiencing many problems such as various malignant
-              diseases
-            </p>
-            <p className="bold">
-              High mortality and low productivity of domestic pig farms
-            </p>
-            <p>
-              The mortality rate of pigs in Korean pig farms is close to 20%.
-              Compared to farms in major overseas countries, the situation is
-              two to four times more serious. Compared to overseas pig farms,
-              Korean pig farms have lower recovery costs, so the quality of pig
-              house management and facilities is relatively low. The
-              productivity of Korea is 60% of that of overseas, and the input
-              cost of feed is 1.5 times.
-            </p>
-            <p className="bold">Practical management issues in pig farms</p>
-            <p>
-              Due to the shortage of farm workers, there are difficulties in
-              managing sows due to insufficient management of sows, lack of a
-              respiratory disease (PRRS) management health status monitoring
-              system, and early weaning piglets management. For example, during
-              an outbreak of African swine fever in one region, more than
-              430,000 pigs on 261 farms are culled per day.
-            </p>
-          </div> 
-        </div>
-      </div> */}
       <div className="solutions-container">
         <div className="layout">
           <p className="solutions-subtitle font-display-xs">
@@ -366,11 +361,28 @@ const Company = () => {
                       pig each day so that they can respond accurately and
                       quickly
                     </p>
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="partners-container">
+        <div className="layout">
+          <Slider {...partnersSliderSettings}>
+            {partners.map((cur) => (
+              <div className="partners-slider-item">
+                <div className="partners-image-wrapper">
+                  <img
+                    className="partners-slider-image"
+                    src={cur.img}
+                    alt="partners logo"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>

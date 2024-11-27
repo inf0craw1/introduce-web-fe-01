@@ -16,6 +16,7 @@ import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
 import "./Product.scss";
 
 const imageData = [
+
   { project_name: "DayFarm SW", images: [Img1, Img2, Img3, Img4] },
   { project_name: "DayFarm IoT", images: [Img5, Img6, Img7, Img8] },
   { project_name: "DayFarm ColdChain", images: null },
