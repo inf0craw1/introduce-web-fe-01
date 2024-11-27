@@ -87,7 +87,6 @@ const Contact = () => {
 
   const sendEmail = () => {
     const templateParams = {
-      to_email: "bsu0404@naver.com",
       message: formData.message,
       phone_number: formData.phone,
       from_name: formData.name,
@@ -96,10 +95,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_1qkwh6k",
-        "template_vvkb6r9",
+        "service_ozcy70f",
+        "template_unjiy7p",
         templateParams,
-        "ZpsD1CsLGNa5AmtNo"
+        "0rUIX9_IacINKegWW"
       )
       .then((response) => {
         console.log("이메일이 성공적으로 보내졌습니다:", response);
