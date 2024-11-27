@@ -95,7 +95,9 @@ const Home = () => {
             <div>and Productivity management can be efficiently performed</div>
           </div>
           <div className="content-text-location font-text-lg">
-            <LocationIcon />
+            <div className="icon">
+              <LocationIcon />
+            </div>
             <div>Seoul, Yongsan Lab. Institute</div>
           </div>
         </div>

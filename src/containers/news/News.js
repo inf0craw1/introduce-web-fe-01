@@ -143,6 +143,18 @@ const News = () => {
           TRACK FARM has an ICT Conversion Technology in Machine-Learning, Smart
           farm biz, and cloud platform.
         </div>
+        <div className="news-video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/jvIc4dijys0?si=FO_sMAwsPCkPW3nZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
         <div className="news-image-wrapper">
           {newsData.map((item, index) => (
             <div key={index} className="news-item">
