@@ -9,6 +9,11 @@
     padding-left: 36px;
     padding-right: 36px;
     margin: auto;
+
+    &-mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 
   .elementor-container {
@@ -19,6 +24,10 @@
     overflow: hidden;
 
     background: index.$black;
+
+    &-mobile {
+      height: 420px;
+    }
 
 
     .img-container {
@@ -76,6 +85,10 @@
         width: 90%;
         margin: auto;
 
+        &-mobile {
+          width: 100%;
+        }
+
         .slider-container {
           width: 80%;
           margin: auto;
@@ -87,6 +100,11 @@
               display: flex;
               height: 100%;
 
+              &-mobile {
+                flex-direction: column;
+                justify-content: start;
+              }
+
               &>div {
                 width: 100%;
               }
@@ -95,6 +113,10 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                &-mobile {
+                  margin-bottom: 26px;
+                }
 
               }
 
@@ -108,6 +130,10 @@
                   height: 92%;
                   border-left: 1px solid index.$black;
                   z-index: -1;
+
+                  &-mobile {
+                    left: 13px;
+                  }
                 }
 
                 .history-item-wrapper {
@@ -118,6 +144,10 @@
                     flex-wrap: wrap;
                     align-items: center;
                     gap: 16px;
+
+                    &-mobile {
+                      gap: 8px;
+                    }
 
                     &+div {
                       margin-top: 40px;
@@ -134,6 +164,11 @@
 
                       border: 1px solid index.$black;
                       border-radius: 100%;
+
+                      &-mobile {
+                        width: 27px;
+                        height: 27px;
+                      }
                     }
 
                     .history-text {
@@ -150,6 +185,11 @@
 
       .slider-arrow-icon {
         cursor: pointer;
+
+        &-mobile {
+          width: 27px;
+          height: 27px;
+        }
 
         &.prev {
           transform: rotate(180deg);
@@ -222,6 +262,10 @@
 
     padding: 186px 0 264px 0;
 
+    &-mobile {
+      padding: 50px 0 50px 0;
+    }
+
     .layout {
       display: flex;
       flex-direction: column;
@@ -234,11 +278,20 @@
 
       .solutions-title {
         margin-bottom: 106px;
+
+        &-mobile {
+          margin-bottom: 32px;
+        }
       }
 
       .solution-item-wrapper {
         display: flex;
         gap: 24px;
+
+        &-mobile {
+          flex-direction: column;
+          gap: 32px;
+        }
 
         .solution-item {
           width: 100%;
@@ -248,12 +301,31 @@
           padding-top: 100px;
           padding-bottom: 100px;
 
+          &-mobile {
+            padding-top: 34px;
+            padding-bottom: 40px;
+          }
+
           .text-wrapper {
             width: 90%;
             margin: auto;
 
+            .solution-item-number {
+              display: none;
+              color: index.$brand100;
+              margin-bottom: 6px;
+
+              &.display {
+                display: block;
+              }
+            }
+
             h4 {
               margin-bottom: 30px;
+
+              &.mobile {
+                margin-bottom: 12px;
+              }
             }
           }
 
@@ -277,19 +349,30 @@
 
       color: index.$white;
 
+      &-mobile {
+        padding: 50px 0;
+      }
+
       .layout {
         margin: auto;
 
         .title {
           margin-bottom: 90px;
           text-align: center;
+
+          &-mobile {
+            margin-bottom: 32px;
+          }
         }
 
         .solutions-item-wrapper {
           display: flex;
           gap: 24px;
 
-
+          &-mobile {
+            flex-direction: column;
+            gap: 20px;
+          }
 
           .solutions-item {
             width: 100%;
@@ -316,6 +399,10 @@
               background: linear-gradient(0deg, index.$black, transparent);
 
               padding: 80px 60px;
+
+              &-mobile {
+                padding: 32px 16px;
+              }
 
               .content {
                 h3 {
@@ -385,6 +472,13 @@
           background: rgba(0, 0, 0, 0.6);
           color: index.$white;
           padding: 50px 40px;
+
+          &-mobile {
+            padding: 0 24px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+          }
         }
 
       }
@@ -392,6 +486,10 @@
       .text-wrapper {
         padding: 62px 92px;
         white-space: pre-wrap;
+
+        &-mobile {
+          padding: 24px;
+        }
       }
 
     }
@@ -404,6 +502,10 @@
     .layout {
       max-width: 1260px;
       padding: 100px 36px 100px 36px;
+
+      &-mobile {
+        padding: 50px 16px;
+      }
 
 
       .partners-scroll-container {
