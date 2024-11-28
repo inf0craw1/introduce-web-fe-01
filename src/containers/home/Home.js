@@ -115,7 +115,11 @@ const Home = ({ isMobile }) => {
           </div>
         </div>
       </div>
-      <div className="content-container">
+      <div
+        className={`content-container ${
+          isMobile ? "content-container-mobile" : ""
+        }`}
+      >
         <div className="content-text">
           <div
             className={
@@ -170,7 +174,11 @@ const Home = ({ isMobile }) => {
         </div>
       </div>
       <div className="content-below-container">
-        <div className="content-below-overlay">
+        <div
+          className={`content-below-overlay ${
+            isMobile ? "content-below-overlay-mobile" : ""
+          }`}
+        >
           <div
             className={
               isMobile
