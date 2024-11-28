@@ -3,11 +3,16 @@
 .product {
   background-color: index.$black;
 
-  .img-responsive {
+  .img-responsive,
+  .img-responsive-mobile {
     position: relative;
     width: 100%;
     height: 120vh;
     overflow: hidden;
+  }
+
+  .img-responsive-mobile {
+    height: 60vh;
   }
 
   .img-container {
@@ -22,17 +27,28 @@
     }
   }
 
-  .background-overlay {
+  .background-overlay,
+  .background-overlay-mobile {
     position: absolute;
     top: 0;
 
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0.65) 90%,
-        rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.65) 90%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  .background-overlay-mobile {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.65) 40%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
 
   .background-overlay-content {
@@ -41,6 +57,13 @@
 
     padding-left: 36px;
     padding-right: 36px;
+    margin: 0 auto;
+
+    color: index.$white;
+  }
+  .background-overlay-content-mobile {
+    width: 100%;
+
     margin: 0 auto;
 
     color: index.$white;
@@ -57,12 +80,31 @@
     margin-top: 200px;
     margin-bottom: 170px;
 
-    .font-display-xs {
+    .product-title {
       margin-bottom: 12px;
     }
   }
+  .background-overlay-content-top-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-  .arrow-button {
+    margin-top: 100px;
+    margin-bottom: 165px;
+
+    .product-title-mobile {
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .product-description-mobile {
+      margin-bottom: 34px;
+      text-align: center;
+    }
+  }
+
+  .arrow-button,
+  .arrow-button-mobile {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -90,14 +132,26 @@
       }
     }
   }
+  .arrow-button-mobile {
+    width: 100%;
+    justify-content: center;
 
-  .tabs-container {
+    .arrow-icon {
+      width: 15px;
+    }
+  }
+
+  .tabs-container,
+  .tabs-container-mobile {
     width: 100%;
 
     margin-top: -30vh;
     padding-bottom: 20vh;
 
     z-index: 5;
+  }
+  .tabs-container-mobile {
+    margin-top: -15vh;
   }
 
   .tabs {
@@ -113,6 +167,17 @@
     justify-content: flex-end;
 
     margin-bottom: 36px;
+  }
+
+  .tabs-mobile {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
   }
 
   .tab-button {
@@ -179,6 +244,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 23px;
   }
+  .tabs-images-grid-mobile {
+    width: 100%;
+  }
 
   .tab-image {
     width: 100%;
@@ -186,6 +254,10 @@
     aspect-ratio: 7/4;
 
     object-fit: cover;
+  }
+  .tab-image-mobile {
+    width: 100%;
+    margin-bottom: 16px;
   }
   .preparing-message {
     padding: 100px 0;
