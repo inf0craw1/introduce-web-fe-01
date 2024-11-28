@@ -127,7 +127,7 @@ const newsData = [
   },
 ];
 
-const News = () => {
+const News = ({ isMobile }) => {
   const getImageClass = (src) => {
     const img = new Image();
     img.src = src;
@@ -137,9 +137,23 @@ const News = () => {
   return (
     <div className="main news">
       <div className="background-overlay"></div>
-      <div className="news-content">
-        <div className="content-title font-display-lg">TRACK FARM NEWS</div>
-        <div className="content-description font-display-xs">
+      <div className={isMobile ? "news-content-mobile" : "news-content"}>
+        <div
+          className={
+            isMobile
+              ? "content-title-mobile font-display-sm"
+              : "content-title font-display-lg"
+          }
+        >
+          {`TRACK FARM \nNEWS`}
+        </div>
+        <div
+          className={
+            isMobile
+              ? "content-description-mobile font-text-xs"
+              : "content-description font-display-xs"
+          }
+        >
           TRACK FARM has an ICT Conversion Technology in Machine-Learning, Smart
           farm biz, and cloud platform.
         </div>
@@ -155,7 +169,11 @@ const News = () => {
             allowfullscreen
           ></iframe>
         </div>
-        <div className="news-image-wrapper">
+        <div
+          className={
+            isMobile ? "news-image-wrapper-mobile" : "news-image-wrapper"
+          }
+        >
           {newsData.map((item, index) => (
             <div key={index} className="news-item">
               <div className="news-img">
@@ -165,7 +183,13 @@ const News = () => {
                   className={getImageClass(item.src)}
                 />
               </div>
-              <div className="news-description font-text-md">
+              <div
+                className={
+                  isMobile
+                    ? "news-description-mobile font-text-xs"
+                    : "news-description font-text-md"
+                }
+              >
                 {item.description}
               </div>
             </div>
