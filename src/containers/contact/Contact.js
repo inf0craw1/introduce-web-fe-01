@@ -262,7 +262,7 @@ const Contact = ({ isMobile }) => {
       </div>
       <div className="content-below-container">
         <div className="background-overlay"></div>
-        <div className="img-content">
+        <div className={`img-content ${isMobile ? "img-content-mobile" : ""}`}>
           <div
             className={
               isMobile

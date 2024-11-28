@@ -20,10 +20,13 @@
     display: flex;
     justify-content: space-between;
   }
+
   .contact-content-mobile {
     width: 100%;
     padding-top: 82px;
     padding-bottom: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .info-window {
@@ -48,6 +51,7 @@
   .contact-title {
     margin-bottom: 40px;
   }
+
   .contact-title-mobile {
     margin-bottom: 16px;
   }
@@ -70,6 +74,7 @@
       }
     }
   }
+
   .contact-info-item-mobile {
     display: flex;
     align-items: center;
@@ -132,6 +137,7 @@
       resize: none;
     }
   }
+
   .contact-form-mobile {
     width: 100%;
 
@@ -150,7 +156,7 @@
     display: none;
   }
 
-  input[type="checkbox"] + span {
+  input[type="checkbox"]+span {
     position: relative;
     width: 20px;
     height: 20px;
@@ -169,7 +175,7 @@
     }
   }
 
-  input[type="checkbox"]:checked + span {
+  input[type="checkbox"]:checked+span {
     background-color: index.$brand200;
     border-color: index.$brand200;
 
@@ -230,11 +236,9 @@
     flex-direction: column;
     align-items: center;
 
-    background: linear-gradient(
-      180deg,
-      rgba(127, 252, 59, 0.16) 0%,
-      rgba(0, 0, 0, 0.2) 87%
-    );
+    background: linear-gradient(180deg,
+        rgba(127, 252, 59, 0.16) 0%,
+        rgba(0, 0, 0, 0.2) 87%);
 
     z-index: 1;
   }
@@ -242,6 +246,11 @@
   .img-content {
     position: relative;
     z-index: 2;
+
+    &-mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 
   .img-title {
@@ -249,6 +258,7 @@
     margin-bottom: 100px;
     text-align: center;
   }
+
   .img-title-mobile {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -271,6 +281,7 @@
       object-fit: cover;
     }
   }
+
   .img-container-mobile {
     width: 100%;
     margin: 0 auto;
