@@ -11,6 +11,10 @@
 
   transition: color 0.2s;
 
+  &-mobile {
+    padding: 4px 16px;
+  }
+
   &:hover {
     border: 1px solid index.$brand200;
     color: index.$brand200;

@@ -185,30 +185,34 @@ const partners = [
   { img: partnerImg15 },
   { img: partnerImg16 },
 ];
-const SliderPrevArrow = ({ className, style, onClick }) => (
+const SliderPrevArrow = ({ className, style, onClick, isMobile }) => (
   <div
-    className={className}
+    className={`${className}`}
     style={{ ...style, display: "block" }}
     onClick={onClick}
   >
     <img
-      className="slider-arrow-icon prev"
+      className={`slider-arrow-icon prev ${
+        isMobile ? "slider-arrow-icon-mobile" : ""
+      }`}
       src={ArrowCircleIcon}
       alt="Previous button"
     />
   </div>
 );
-const SliderNextArrow = ({ className, style, onClick }) => (
+const SliderNextArrow = ({ className, style, onClick, isMobile }) => (
   <div className={className} style={{ ...style }} onClick={onClick}>
     <img
-      className="slider-arrow-icon next"
+      className={`slider-arrow-icon next ${
+        isMobile ? "slider-arrow-icon-mobile" : ""
+      }`}
       src={ArrowCircleIcon}
       alt="Next button"
     />
   </div>
 );
 
-const Company = () => {
+const Company = ({ isMobile }) => {
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -244,13 +248,19 @@ const Company = () => {
   };
   return (
     <div className="main company">
-      <div className="elementor-container">
+      <div
+        className={`elementor-container ${
+          isMobile ? "elementor-container-mobile" : ""
+        }`}
+      >
         <div className="img-container">
           <img alt="CompanyBackground" src={CompanyBackground} />
         </div>
         <div className="elementor-title-wrapper">
-          <p className={`font-display-xs`}>TRACKFARM MISSION</p>
-          <h2 className={`font-display-lg`}>
+          <p className={`${isMobile ? "font-text-xs" : "font-display-xs"}`}>
+            TRACKFARM MISSION
+          </p>
+          <h2 className={`${isMobile ? "font-display-sm" : "font-display-lg"}`}>
             Change the farming system for
             <br />
             Sustainable Livestock & Environment
@@ -260,9 +270,16 @@ const Company = () => {
         </div>
       </div>
       <div className="company-history-container">
-        <div className="layout">
-          <div className="slider-wrapper">
-            <SliderPrevArrow onClick={handlePreviousClick} />
+        <div className={`layout ${isMobile ? "layout-mobile" : ""}`}>
+          <div
+            className={`slider-wrapper ${
+              isMobile ? "slider-wrapper-mobile" : ""
+            }`}
+          >
+            <SliderPrevArrow
+              onClick={handlePreviousClick}
+              isMobile={isMobile}
+            />
             <Slider
               className="slider-container"
               {...sliderSettings}
@@ -270,23 +287,69 @@ const Company = () => {
             >
               {historyData.map((data) => (
                 <div className="slider-item">
-                  <div className="content-wrapper">
-                    <div className="year-container">
+                  <div
+                    className={`content-wrapper ${
+                      isMobile ? "content-wrapper-mobile" : ""
+                    }`}
+                  >
+                    <div
+                      className={`year-container ${
+                        isMobile ? "year-container-mobile" : ""
+                      }`}
+                    >
                       <div className="text-wrapper">
-                        <h4 className={`font-display-sm`}>HISTORY</h4>
-                        <h3 className={`font-display-lg`}>{data.year}</h3>
+                        <h4
+                          className={`${
+                            isMobile ? "font-text-md" : "font-display-sm"
+                          }`}
+                        >
+                          HISTORY
+                        </h4>
+                        <h3
+                          className={`${
+                            isMobile ? "font-display-sm" : "font-display-lg"
+                          }`}
+                        >
+                          {data.year}
+                        </h3>
                       </div>
                     </div>
 
                     <div className="history-container">
-                      <div className="history-month-line" />
+                      <div
+                        className={`history-month-line ${
+                          isMobile ? "history-month-line-mobile" : ""
+                        }`}
+                      />
                       <div className="history-item-wrapper">
                         {data.content.map((cur) => (
-                          <div className="history-item">
-                            <div className="history-month">
-                              <p className={`font-text-md`}>{cur.month}</p>
+                          <div
+                            className={`history-item ${
+                              isMobile ? "history-item-mobile" : ""
+                            }`}
+                          >
+                            <div
+                              className={`history-month ${
+                                isMobile ? "history-month-mobile" : ""
+                              }`}
+                            >
+                              <p
+                                className={`${
+                                  isMobile ? "font-text-xs" : "font-text-md"
+                                }`}
+                              >
+                                {cur.month}
+                              </p>
                             </div>
-                            <div className="history-text">{cur.text}</div>
+                            <div
+                              className={`${
+                                isMobile
+                                  ? "font-text-xs history-text-mobile"
+                                  : "font-text-md"
+                              } history-text`}
+                            >
+                              {cur.text}
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -295,24 +358,57 @@ const Company = () => {
                 </div>
               ))}
             </Slider>
-            <SliderNextArrow onClick={handleNextClick} />
+            <SliderNextArrow onClick={handleNextClick} isMobile={isMobile} />
           </div>
         </div>
       </div>
-      <div className="solutions-container">
-        <div className="layout">
-          <p className="solutions-subtitle font-display-xs">
+      <div
+        className={`solutions-container ${
+          isMobile ? "solutions-container-mobile" : ""
+        }`}
+      >
+        <div className={`layout ${isMobile ? "layout-mobile" : ""}`}>
+          <p
+            className={`solutions-subtitle ${
+              isMobile ? "font-text-xs" : "font-display-xs"
+            }`}
+          >
             Innovation for Future Farming
           </p>
-          <h3 className="solutions-title font-display-lg text-center">
+          <h3
+            className={`solutions-title ${
+              isMobile
+                ? "font-display-sm solutions-title-mobile"
+                : "font-display-lg"
+            } text-center`}
+          >
             We solve many problems in livestock farms and think about better
             agriculture industry
           </h3>
 
-          <div className="solution-item-wrapper">
-            <div className="solution-item">
+          <div
+            className={`solution-item-wrapper ${
+              isMobile ? "solution-item-wrapper-mobile" : ""
+            }`}
+          >
+            <div
+              className={`solution-item ${
+                isMobile ? "solution-item-mobile" : ""
+              }`}
+            >
               <div className="text-wrapper">
-                <h4 className={`font-display-sm`}>
+                <p
+                  className={`font-text-lg solution-item-number ${
+                    isMobile ? "display" : ""
+                  }`}
+                >
+                  01
+                </p>
+                <h4
+                  className={`${
+                    isMobile ? "font-display-xs mobile" : "font-display-sm"
+                  }`}
+                >
                   Serious employment reality of pig farms
                 </h4>
                 <p className={`font-text-md`}>
@@ -324,9 +420,24 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="solution-item">
+            <div
+              className={`solution-item ${
+                isMobile ? "solution-item-mobile" : ""
+              }`}
+            >
               <div className="text-wrapper">
-                <h4 className={`font-display-sm`}>
+                <p
+                  className={`font-text-lg solution-item-number ${
+                    isMobile ? "display" : ""
+                  }`}
+                >
+                  02
+                </p>
+                <h4
+                  className={`${
+                    isMobile ? "font-display-xs mobile" : "font-display-sm"
+                  }`}
+                >
                   High mortality and low productivity of domestic pig farms
                 </h4>
                 <p className={`font-text-md`}>
@@ -340,9 +451,24 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="solution-item">
+            <div
+              className={`solution-item ${
+                isMobile ? "solution-item-mobile" : ""
+              }`}
+            >
               <div className="text-wrapper">
-                <h4 className={`font-display-sm`}>
+                <p
+                  className={`font-text-lg solution-item-number ${
+                    isMobile ? "display" : ""
+                  }`}
+                >
+                  03
+                </p>
+                <h4
+                  className={`${
+                    isMobile ? "font-display-xs mobile" : "font-display-sm"
+                  }`}
+                >
                   Practical management issues in pig farms
                 </h4>
                 <p className={`font-text-md`}>
@@ -365,23 +491,51 @@ const Company = () => {
       >
         <div className={`solutions-modal-container`}>
           <div className={`solutions-modal-title-container`}>
-            <div className={`solutions-modal-title-wrapper font-display-sm`}>
+            <div
+              className={`solutions-modal-title-wrapper ${
+                isMobile
+                  ? "font-display-xs solutions-modal-title-wrapper-mobile"
+                  : "font-display-sm"
+              }`}
+            >
               {solutionModalData[modalNumber].title}
             </div>
           </div>
-          <div className="text-wrapper font-text-md">
+          <div
+            className={`text-wrapper ${
+              isMobile ? "font-text-xs text-wrapper-mobile" : "font-text-md"
+            }`}
+          >
             {solutionModalData[modalNumber].content}
           </div>
         </div>
       </div>
       <div className="solutions-container-2">
-        <div className="solutions-below-overlay">
-          <div className="layout">
-            <h3 className="title font-display-lg">Our Solutions</h3>
+        <div
+          className={`solutions-below-overlay ${
+            isMobile ? "solutions-below-overlay-mobile" : ""
+          }`}
+        >
+          <div className={`layout ${isMobile ? "layout-mobile" : ""}`}>
+            <h3
+              className={`title ${
+                isMobile ? "font-display-sm title-mobile" : "font-display-lg"
+              }`}
+            >
+              Our Solutions
+            </h3>
 
-            <div className="solutions-item-wrapper">
+            <div
+              className={`solutions-item-wrapper ${
+                isMobile ? "solutions-item-wrapper-mobile" : ""
+              }`}
+            >
               <div className="solutions-item">
-                <div className="image-overlay">
+                <div
+                  className={`image-overlay ${
+                    isMobile ? "image-overlay-mobile" : ""
+                  }`}
+                >
                   <div className="content">
                     <h3 className={`font-display-sm`}>
                       Deep Learning Solution
@@ -394,12 +548,17 @@ const Company = () => {
                     <OutlineButton
                       onClick={() => setModalNumber(1)}
                       label={"MORE DETAIL"}
+                      isMobile={isMobile}
                     />
                   </div>
                 </div>
               </div>
               <div className="solutions-item">
-                <div className="image-overlay">
+                <div
+                  className={`image-overlay ${
+                    isMobile ? "image-overlay-mobile" : ""
+                  }`}
+                >
                   <div className="content">
                     <h3 className={`font-display-sm`}>
                       Improving the productivity of farms
@@ -413,6 +572,7 @@ const Company = () => {
                     <OutlineButton
                       onClick={() => setModalNumber(2)}
                       label={"MORE DETAIL"}
+                      isMobile={isMobile}
                     />
                   </div>
                 </div>
@@ -422,7 +582,7 @@ const Company = () => {
         </div>
       </div>
       <div className="partners-container">
-        <div className="layout">
+        <div className={`layout ${isMobile ? "layout-mobile" : ""}`}>
           <div className="partners-scroll-container">
             <div className="partners-scroll-wrapper">
               {partners.map((cur) => (
