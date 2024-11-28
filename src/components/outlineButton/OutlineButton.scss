@@ -1,0 +1,18 @@
+@use "/src/index";
+
+.outline-button-container {
+  background: transparent;
+  padding: 8px 20px;
+
+  color: index.$white;
+
+  border: 1px solid index.$white;
+  cursor: pointer;
+
+  transition: color 0.2s;
+
+  &:hover {
+    border: 1px solid index.$brand200;
+    color: index.$brand200;
+  }
+}

@@ -1,7 +1,8 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useCallback, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import OutlineButton from "components/outlineButton";
 import "./Company.scss";
 import ArrowCircleIcon from "assets/arrow-circle.svg";
 import CompanyBackground from "assets/company_background.png";
@@ -167,6 +168,22 @@ const partners = [
   { img: partnerImg14 },
   { img: partnerImg15 },
   { img: partnerImg16 },
+  { img: partnerImg1 },
+  { img: partnerImg2 },
+  { img: partnerImg3 },
+  { img: partnerImg4 },
+  { img: partnerImg5 },
+  { img: partnerImg6 },
+  { img: partnerImg7 },
+  { img: partnerImg8 },
+  { img: partnerImg9 },
+  { img: partnerImg10 },
+  { img: partnerImg11 },
+  { img: partnerImg12 },
+  { img: partnerImg13 },
+  { img: partnerImg14 },
+  { img: partnerImg15 },
+  { img: partnerImg16 },
 ];
 const SliderPrevArrow = ({ className, style, onClick }) => (
   <div
@@ -190,15 +207,8 @@ const SliderNextArrow = ({ className, style, onClick }) => (
     />
   </div>
 );
+
 const Company = () => {
-  const slickRef = useRef(null);
-
-  const handlePreviousClick = useCallback(
-    () => slickRef.current.slickPrev(),
-    []
-  );
-  const handleNextClick = useCallback(() => slickRef.current.slickNext(), []);
-
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -208,16 +218,30 @@ const Company = () => {
     arrows: false,
   };
 
-  const partnersSliderSettings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 5,
-    autoplay: true,
-    speed: 800,
-    autoplaySpeed: 800,
-    arrows: false,
-  };
+  const solutionModalData = [
+    {},
+    {
+      title: `Deep Learning Solution`,
+      content: `Track Farm monitors the movements of all pigs (one per 132㎡) with AI cameras in the farm. With motion AI technology and sensors, you can manage pig health data within the integrated analysis service by collecting and analyzing all behavioral pattern data, such as the number of pig meals, defecation, moving distance, and where they stay.\n\nDetects all specific abnormal behaviors and suspicious symptoms, notifies the farmer when a problem is found, then makes a diagnosis according to the algorithm and suggests a countermeasure.`,
+    },
+    {
+      title: `Improving the productivity of farms`,
+      content: `Currently, smart farms in the livestock industry are mainly focusing on automation technology for facilities, such as time-dependent feed distribution and temperature control to match the standard temperature.\n\n- Track Farm provides farmers with a daily report for each pig each day so that they can respond accurately and quickly. This minimizes damage and creates a healthy and efficient farm management system. In addition, we provide a solution for improving the productivity of farms by making all these platforms a platform and using them for R&D and building an integrated management platform for each region.`,
+    },
+  ];
 
+  const [modalNumber, setModalNumber] = useState(0);
+  const slickRef = useRef(null);
+
+  const handlePreviousClick = useCallback(
+    () => slickRef.current.slickPrev(),
+    []
+  );
+  const handleNextClick = useCallback(() => slickRef.current.slickNext(), []);
+
+  const handleModalBackgroundClick = () => {
+    setModalNumber(0);
+  };
   return (
     <div className="main company">
       <div className="elementor-container">
@@ -225,9 +249,11 @@ const Company = () => {
           <img alt="CompanyBackground" src={CompanyBackground} />
         </div>
         <div className="elementor-title-wrapper">
-          <p className="font-display-xs">TRACKFARM MISSION</p>
-          <h2 className="font-display-lg">
-            Change the farming system for Sustainable Livestock & Environment
+          <p className={`font-display-xs`}>TRACKFARM MISSION</p>
+          <h2 className={`font-display-lg`}>
+            Change the farming system for
+            <br />
+            Sustainable Livestock & Environment
             <br />
             Farming solution
           </h2>
@@ -247,8 +273,8 @@ const Company = () => {
                   <div className="content-wrapper">
                     <div className="year-container">
                       <div className="text-wrapper">
-                        <h4 className="font-display-sm">HISTORY</h4>
-                        <h3 className="font-display-lg">{data.year}</h3>
+                        <h4 className={`font-display-sm`}>HISTORY</h4>
+                        <h3 className={`font-display-lg`}>{data.year}</h3>
                       </div>
                     </div>
 
@@ -258,7 +284,7 @@ const Company = () => {
                         {data.content.map((cur) => (
                           <div className="history-item">
                             <div className="history-month">
-                              <p className="font-text-md">{cur.month}</p>
+                              <p className={`font-text-md`}>{cur.month}</p>
                             </div>
                             <div className="history-text">{cur.text}</div>
                           </div>
@@ -278,7 +304,7 @@ const Company = () => {
           <p className="solutions-subtitle font-display-xs">
             Innovation for Future Farming
           </p>
-          <h3 className="solutions-title font-display-lg">
+          <h3 className="solutions-title font-display-lg text-center">
             We solve many problems in livestock farms and think about better
             agriculture industry
           </h3>
@@ -286,10 +312,10 @@ const Company = () => {
           <div className="solution-item-wrapper">
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   Serious employment reality of pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   Livestock industry of pig farms is shrinking. The decline and
                   aging of the farm abor population, and the 3D industry have
                   led to severe reluctance among young farmers and foreign
@@ -300,10 +326,10 @@ const Company = () => {
             </div>
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   High mortality and low productivity of domestic pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   The mortality rate of pigs in Korean pig farms is close to
                   20%. Compared to farms in major overseas countries, the
                   situation is two to four times more serious. Compared to
@@ -316,10 +342,10 @@ const Company = () => {
             </div>
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   Practical management issues in pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   Due to the shortage of farm workers, there are difficulties in
                   managing sows due to insufficient management of sows, lack of
                   a respiratory disease (PRRS) management health status
@@ -333,6 +359,21 @@ const Company = () => {
           </div>
         </div>
       </div>
+      <div
+        className={`solutions-modal-background modal-${modalNumber}`}
+        onClick={handleModalBackgroundClick}
+      >
+        <div className={`solutions-modal-container`}>
+          <div className={`solutions-modal-title-container`}>
+            <div className={`solutions-modal-title-wrapper font-display-sm`}>
+              {solutionModalData[modalNumber].title}
+            </div>
+          </div>
+          <div className="text-wrapper font-text-md">
+            {solutionModalData[modalNumber].content}
+          </div>
+        </div>
+      </div>
       <div className="solutions-container-2">
         <div className="solutions-below-overlay">
           <div className="layout">
@@ -342,18 +383,25 @@ const Company = () => {
               <div className="solutions-item">
                 <div className="image-overlay">
                   <div className="content">
-                    <h3 className="font-display-sm">Deep Learning Solution</h3>
+                    <h3 className={`font-display-sm`}>
+                      Deep Learning Solution
+                    </h3>
                     <p classNmae="font-text-md">
                       Track Farm monitors the movements of all pigs (one per
                       132㎡) with AI cameras in the farm.
                     </p>
+
+                    <OutlineButton
+                      onClick={() => setModalNumber(1)}
+                      label={"MORE DETAIL"}
+                    />
                   </div>
                 </div>
               </div>
               <div className="solutions-item">
                 <div className="image-overlay">
                   <div className="content">
-                    <h3 className="font-display-sm">
+                    <h3 className={`font-display-sm`}>
                       Improving the productivity of farms
                     </h3>
                     <p classNmae="font-text-md">
@@ -361,6 +409,11 @@ const Company = () => {
                       pig each day so that they can respond accurately and
                       quickly
                     </p>
+
+                    <OutlineButton
+                      onClick={() => setModalNumber(2)}
+                      label={"MORE DETAIL"}
+                    />
                   </div>
                 </div>
               </div>
@@ -370,7 +423,22 @@ const Company = () => {
       </div>
       <div className="partners-container">
         <div className="layout">
-          <Slider {...partnersSliderSettings}>
+          <div className="partners-scroll-container">
+            <div className="partners-scroll-wrapper">
+              {partners.map((cur) => (
+                <div className="partners-slider-item">
+                  <div className="partners-image-wrapper">
+                    <img
+                      className="partners-slider-image"
+                      src={cur.img}
+                      alt="partners logo"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* <Slider {...partnersSliderSettings}>
             {partners.map((cur) => (
               <div className="partners-slider-item">
                 <div className="partners-image-wrapper">
@@ -382,7 +450,7 @@ const Company = () => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     </div>
