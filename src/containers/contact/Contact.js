@@ -30,7 +30,7 @@ const contactDetails = [
   },
 ];
 
-const Contact = () => {
+const Contact = ({ isMobile }) => {
   const mapRef = useRef(null);
 
   const initMap = useCallback(() => {
@@ -139,13 +139,32 @@ const Contact = () => {
 
   return (
     <div className="main contact">
-      <div className="contact-content">
-        <div className="contact-info-wrapper">
+      <div className={isMobile ? "contact-content-mobile" : "contact-content"}>
+        <div className={isMobile ? "" : "contact-info-wrapper"}>
           <div className="contact-info-text">
-            <div className="contact-title font-display-lg">Contact us</div>
-            <div className="contact-detail font-text-md">
+            <div
+              className={
+                isMobile
+                  ? "contact-title-mobile font-display-sm"
+                  : "contact-title font-display-lg"
+              }
+            >
+              Contact us
+            </div>
+            <div
+              className={
+                isMobile
+                  ? "contact-detail font-text-xs"
+                  : "contact-detail font-text-md"
+              }
+            >
               {contactDetails.map((item, index) => (
-                <div className="contact-info-item" key={index}>
+                <div
+                  className={
+                    isMobile ? "contact-info-item-mobile" : "contact-info-item"
+                  }
+                  key={index}
+                >
                   <div className="icon">{item.icon}</div>
                   {item.text}
                 </div>
@@ -159,7 +178,13 @@ const Contact = () => {
           ></div>
         </div>
 
-        <div className="contact-form font-text-md">
+        <div
+          className={
+            isMobile
+              ? "contact-form-mobile font-text-md"
+              : "contact-form font-text-xs"
+          }
+        >
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -238,8 +263,16 @@ const Contact = () => {
       <div className="content-below-container">
         <div className="background-overlay"></div>
         <div className="img-content">
-          <div className="img-title font-display-lg">TRACK FARM</div>
-          <div className="img-container">
+          <div
+            className={
+              isMobile
+                ? "img-title-mobile font-display-sm"
+                : "img-title font-display-lg"
+            }
+          >
+            TRACK FARM
+          </div>
+          <div className={isMobile ? "img-container-mobile" : "img-container"}>
             {contactImgs.map((item, index) => (
               <div key={index} className="img-item">
                 <img src={item} alt={`img${index + 1}`} />
