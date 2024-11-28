@@ -45,9 +45,12 @@
       width: 100%;
       height: 100%;
 
-      text-align: center;
 
       color: index.$white;
+
+      h2 {
+        text-align: center;
+      }
     }
   }
 
@@ -318,6 +321,10 @@
                 h3 {
                   margin-bottom: 24px;
                 }
+
+                p {
+                  margin-bottom: 32px;
+                }
               }
 
 
@@ -326,6 +333,67 @@
           }
         }
       }
+    }
+  }
+
+  .solutions-modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 5;
+
+    display: none;
+
+    &.modal-1,
+    &.modal-2 {
+      display: flex;
+    }
+
+    &.modal-1 .solutions-modal-title-container {
+      background-image: url('/assets/solution-image-1.png');
+    }
+
+    &.modal-2 .solutions-modal-title-container {
+      background-image: url('/assets/solution-image-2.png');
+    }
+
+
+    .solutions-modal-container {
+      max-width: 900px;
+      width: 90%;
+      background: index.$white;
+
+      border-radius: 4px;
+      overflow: hidden;
+
+      .solutions-modal-title-container {
+        width: 100%;
+
+
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+
+        .solutions-modal-title-wrapper {
+          background: rgba(0, 0, 0, 0.6);
+          color: index.$white;
+          padding: 50px 40px;
+        }
+
+      }
+
+      .text-wrapper {
+        padding: 62px 92px;
+        white-space: pre-wrap;
+      }
+
     }
   }
 
@@ -338,8 +406,41 @@
       padding: 100px 36px 100px 36px;
 
 
+      .partners-scroll-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+      }
+
+      .partners-scroll-wrapper {
+        overflow: hidden;
+        height: 100%;
+        white-space: nowrap;
+        animation: scrollText 40s infinite linear;
+        margin: 0;
+        font-size: 0;
+        display: flex;
+        justify-content: space-between;
+        width: fit-content;
+      }
+
+      @keyframes scrollText {
+        from {
+          transform: translateX(20%);
+        }
+
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+
+
       .partners-slider-item {
-        width: 120px;
+        width: 220px;
         min-height: 200px;
 
         .partners-image-wrapper {
