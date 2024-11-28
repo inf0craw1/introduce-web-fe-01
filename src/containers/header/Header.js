@@ -11,7 +11,11 @@ import "./Header.scss";
 const Header = ({ isMobile, isOpen, onClickMenu }) => {
   return (
     <div className="header-layout">
-      <div className="header-container">
+      <div
+        className={`header-container ${
+          isMobile ? "header-container-mobile" : ""
+        }`}
+      >
         <div className="header">
           <div className="header-logo">
             <Link to="/">
