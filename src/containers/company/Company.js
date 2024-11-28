@@ -218,16 +218,6 @@ const Company = () => {
     arrows: false,
   };
 
-  const partnersSliderSettings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 5,
-    autoplay: true,
-    speed: 800,
-    autoplaySpeed: 0,
-    arrows: false,
-  };
-
   const solutionModalData = [
     {},
     {
@@ -259,8 +249,8 @@ const Company = () => {
           <img alt="CompanyBackground" src={CompanyBackground} />
         </div>
         <div className="elementor-title-wrapper">
-          <p className="font-display-xs">TRACKFARM MISSION</p>
-          <h2 className="font-display-lg">
+          <p className={`font-display-xs`}>TRACKFARM MISSION</p>
+          <h2 className={`font-display-lg`}>
             Change the farming system for
             <br />
             Sustainable Livestock & Environment
@@ -283,8 +273,8 @@ const Company = () => {
                   <div className="content-wrapper">
                     <div className="year-container">
                       <div className="text-wrapper">
-                        <h4 className="font-display-sm">HISTORY</h4>
-                        <h3 className="font-display-lg">{data.year}</h3>
+                        <h4 className={`font-display-sm`}>HISTORY</h4>
+                        <h3 className={`font-display-lg`}>{data.year}</h3>
                       </div>
                     </div>
 
@@ -294,7 +284,7 @@ const Company = () => {
                         {data.content.map((cur) => (
                           <div className="history-item">
                             <div className="history-month">
-                              <p className="font-text-md">{cur.month}</p>
+                              <p className={`font-text-md`}>{cur.month}</p>
                             </div>
                             <div className="history-text">{cur.text}</div>
                           </div>
@@ -322,10 +312,10 @@ const Company = () => {
           <div className="solution-item-wrapper">
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   Serious employment reality of pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   Livestock industry of pig farms is shrinking. The decline and
                   aging of the farm abor population, and the 3D industry have
                   led to severe reluctance among young farmers and foreign
@@ -336,10 +326,10 @@ const Company = () => {
             </div>
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   High mortality and low productivity of domestic pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   The mortality rate of pigs in Korean pig farms is close to
                   20%. Compared to farms in major overseas countries, the
                   situation is two to four times more serious. Compared to
@@ -352,10 +342,10 @@ const Company = () => {
             </div>
             <div className="solution-item">
               <div className="text-wrapper">
-                <h4 className="font-display-sm">
+                <h4 className={`font-display-sm`}>
                   Practical management issues in pig farms
                 </h4>
-                <p className="font-text-md">
+                <p className={`font-text-md`}>
                   Due to the shortage of farm workers, there are difficulties in
                   managing sows due to insufficient management of sows, lack of
                   a respiratory disease (PRRS) management health status
@@ -393,7 +383,9 @@ const Company = () => {
               <div className="solutions-item">
                 <div className="image-overlay">
                   <div className="content">
-                    <h3 className="font-display-sm">Deep Learning Solution</h3>
+                    <h3 className={`font-display-sm`}>
+                      Deep Learning Solution
+                    </h3>
                     <p classNmae="font-text-md">
                       Track Farm monitors the movements of all pigs (one per
                       132㎡) with AI cameras in the farm.
@@ -409,7 +401,7 @@ const Company = () => {
               <div className="solutions-item">
                 <div className="image-overlay">
                   <div className="content">
-                    <h3 className="font-display-sm">
+                    <h3 className={`font-display-sm`}>
                       Improving the productivity of farms
                     </h3>
                     <p classNmae="font-text-md">
