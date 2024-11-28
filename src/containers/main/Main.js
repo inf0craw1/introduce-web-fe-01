@@ -67,7 +67,7 @@ const Main = ({ match: { path } }) => {
           isOpen={isOpen}
           onClickMenu={handleClickMenu}
         />
-        <Page />
+        <Page isMobile={isMobile} />
         <Footer isMobile={isMobile} />
       </div>
       <div ref={menuRef} className={`menu${isOpen ? " isOpen" : ""}`}>

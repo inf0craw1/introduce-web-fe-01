@@ -14,10 +14,11 @@ const contactImgs = [Img1, Img2, Img3, Img4];
 
 const contactDetails = [
   { icon: <CallIcon />, text: "(Tel) 010-2088-9798" },
-  { icon: <EmailIcon />, text: "trackfarm@naver.com" },
+  { icon: <CallIcon />, text: "(Tel) 031-426-7772" },
+  { icon: <EmailIcon />, text: "ycn@trackfarm.co.kr" },
   {
     icon: <LocationIcon />,
-    text: "HeadOffice: Chungcheongnam-do Asan-si Baebangeup Heemangro 46beongil 45-11, 502",
+    text: "HeadOffice: Gyeonggi-do Uiwang-si Anyang Pangyo-ro 82, 607",
   },
   {
     icon: <LocationIcon />,
@@ -34,7 +35,7 @@ const Contact = () => {
 
   const initMap = useCallback(() => {
     const locations = [
-      { name: "Head Office", position: { lat: 36.7899054, lng: 127.1072841 } },
+      { name: "Head Office", position: { lat: 37.3961809, lng: 126.9828084 } },
       {
         name: "Laboratory",
         position: { lat: 37.41386594530962, lng: 127.09866353717115 },
@@ -46,8 +47,8 @@ const Contact = () => {
     ];
 
     const map = new window.google.maps.Map(mapRef.current, {
-      center: locations[1].position,
-      zoom: 7.5,
+      center: { lat: 37.4700173, lng: 127.485694 },
+      zoom: 9,
     });
     locations.forEach((location) => {
       const contentString = `<div class='info-window'>
