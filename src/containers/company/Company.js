@@ -536,11 +536,15 @@ const Company = ({ isMobile }) => {
                     isMobile ? "image-overlay-mobile" : ""
                   }`}
                 >
-                  <div className="content">
-                    <h3 className={`font-display-sm`}>
+                  <div className={isMobile ? "content-mobile" : "content"}>
+                    <h3
+                      className={
+                        isMobile ? `font-display-xs` : `font-display-sm`
+                      }
+                    >
                       Deep Learning Solution
                     </h3>
-                    <p classNmae="font-text-md">
+                    <p classNmae={isMobile ? "font-text-xs" : "font-text-md"}>
                       Track Farm monitors the movements of all pigs (one per
                       132㎡) with AI cameras in the farm.
                     </p>
@@ -559,11 +563,15 @@ const Company = ({ isMobile }) => {
                     isMobile ? "image-overlay-mobile" : ""
                   }`}
                 >
-                  <div className="content">
-                    <h3 className={`font-display-sm`}>
+                  <div className={isMobile ? "content-mobile" : "content"}>
+                    <h3
+                      className={
+                        isMobile ? `font-display-xs` : `font-display-sm`
+                      }
+                    >
                       Improving the productivity of farms
                     </h3>
-                    <p classNmae="font-text-md">
+                    <p classNmae={isMobile ? "font-text-xs" : "font-text-md"}>
                       Track Farm provides farmers with a daily report for each
                       pig each day so that they can respond accurately and
                       quickly

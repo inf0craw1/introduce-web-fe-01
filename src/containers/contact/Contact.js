@@ -48,7 +48,7 @@ const Contact = ({ isMobile }) => {
 
     const map = new window.google.maps.Map(mapRef.current, {
       center: { lat: 37.4700173, lng: 127.485694 },
-      zoom: 9,
+      zoom: isMobile ? 8 : 9,
     });
     locations.forEach((location) => {
       const contentString = `<div class='info-window'>
