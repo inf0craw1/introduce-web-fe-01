@@ -125,7 +125,11 @@ const Footer = ({ isMobile }) => {
           </div> */}
         </div>
       </div>
-      <div className="footer-layout">
+      <div
+        className={`footer-layout ${
+          isMobile ? "font-text-xs" : "font-text-sm"
+        }`}
+      >
         <div className="footer-copyright-container">
           <p>
             COPYRIGHTⓒ2020
