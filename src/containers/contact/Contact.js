@@ -30,51 +30,39 @@ const contactDetails = [
   },
 ];
 
+const locations = [
+  { name: "Head Office", position: { lat: 37.3961809, lng: 126.9828084 } },
+  {
+    name: "Laboratory",
+    position: { lat: 37.41386594530962, lng: 127.09866353717115 },
+  },
+  {
+    name: "R&D Farm",
+    position: { lat: 37.52386160007372, lng: 127.98114943848411 },
+  },
+];
+
 const Contact = ({ isMobile }) => {
-  const mapRef = useRef(null);
+  const mapRefs = useRef([]);
 
-  const initMap = useCallback(() => {
-    const locations = [
-      { name: "Head Office", position: { lat: 37.3961809, lng: 126.9828084 } },
-      {
-        name: "Laboratory",
-        position: { lat: 37.41386594530962, lng: 127.09866353717115 },
-      },
-      {
-        name: "R&D Farm",
-        position: { lat: 37.52386160007372, lng: 127.98114943848411 },
-      },
-    ];
-
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: { lat: 37.4700173, lng: 127.485694 },
-      zoom: isMobile ? 8 : 9,
-    });
-    locations.forEach((location) => {
-      const contentString = `<div class='info-window'>
-      ${location.name}</div>`;
-
-      const infowindow = new window.google.maps.InfoWindow({
-        content: contentString,
+  const initMaps = useCallback(() => {
+    locations.forEach((location, index) => {
+      const map = new window.google.maps.Map(mapRefs.current[index], {
+        center: location.position,
+        zoom: 15,
       });
 
-      const marker = new window.google.maps.Marker({
+      new window.google.maps.Marker({
         position: location.position,
         map,
-      });
-
-      marker.addListener("click", () => {
-        infowindow.open({
-          anchor: marker,
-          map,
-        });
+        title: location.name,
       });
     });
-  }, [mapRef]);
+  }, []);
 
   useEffect(() => {
-    initMap();
-  }, [initMap]);
+    initMaps();
+  }, [initMaps]);
 
   const [isEmailSent, setIsEmailSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -170,11 +158,20 @@ const Contact = ({ isMobile }) => {
               ))}
             </div>
           </div>
-          <div
-            className="map"
-            style={{ width: "100%", aspectRatio: "5/3" }}
-            ref={mapRef}
-          ></div>
+          <div className="maps-container">
+            {locations.map((_, index) => (
+              <div
+                key={index}
+                className="map"
+                style={{
+                  width: "100%",
+                  aspectRatio: "4/3",
+                  marginBottom: "20px",
+                }}
+                ref={(el) => (mapRefs.current[index] = el)}
+              ></div>
+            ))}
+          </div>
         </div>
 
         <div
