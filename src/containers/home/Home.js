@@ -44,7 +44,6 @@ const iconData = [
   { src: Icon3, alt: "icon3", text: "Productivity\nmanagement" },
 ];
 const Home = ({ isMobile }) => {
-  console.log(isMobile);
   return (
     <div className="main home">
       <div className={isMobile ? "img-responsive-mobile" : "img-responsive"}>

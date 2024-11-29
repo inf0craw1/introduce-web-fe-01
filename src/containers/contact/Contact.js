@@ -102,7 +102,6 @@ const Contact = ({ isMobile }) => {
         "0rUIX9_IacINKegWW"
       )
       .then((response) => {
-        console.log("이메일이 성공적으로 보내졌습니다:", response);
         setIsEmailSent(true);
         setTimeout(() => setIsEmailSent(false), 3000);
         setFormData({
