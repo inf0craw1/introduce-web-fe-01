@@ -592,7 +592,11 @@ const Company = ({ isMobile }) => {
       <div className="partners-container">
         <div className={`layout ${isMobile ? "layout-mobile" : ""}`}>
           <div className="partners-scroll-container">
-            <div className="partners-scroll-wrapper">
+            <div
+              className={`partners-scroll-wrapper ${
+                isMobile ? "partners-scroll-wrapper-mobile" : ""
+              }`}
+            >
               {partners.map((cur) => (
                 <div className="partners-slider-item">
                   <div className="partners-image-wrapper">

@@ -519,17 +519,32 @@
         overflow: hidden;
         height: 100%;
         white-space: nowrap;
-        animation: scrollText 40s infinite linear;
+        animation: scrollPartners 40s infinite linear;
         margin: 0;
         font-size: 0;
         display: flex;
         justify-content: space-between;
         width: fit-content;
+
+        &-mobile {
+          animation: scrollPartnersMobile 40s infinite linear;
+        }
       }
 
-      @keyframes scrollText {
+      @keyframes scrollPartners {
         from {
           transform: translateX(20%);
+        }
+
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+
+      @keyframes scrollPartnersMobile {
+        from {
+          transform: translateX(10%);
         }
 
         to {
