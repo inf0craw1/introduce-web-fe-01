@@ -101,7 +101,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     border-radius: 4px;
     color: index.$white;
@@ -156,7 +155,7 @@
     display: none;
   }
 
-  input[type="checkbox"]+span {
+  input[type="checkbox"] + span {
     position: relative;
     width: 20px;
     height: 20px;
@@ -175,7 +174,7 @@
     }
   }
 
-  input[type="checkbox"]:checked+span {
+  input[type="checkbox"]:checked + span {
     background-color: index.$brand200;
     border-color: index.$brand200;
 
@@ -236,9 +235,11 @@
     flex-direction: column;
     align-items: center;
 
-    background: linear-gradient(180deg,
-        rgba(127, 252, 59, 0.16) 0%,
-        rgba(0, 0, 0, 0.2) 87%);
+    background: linear-gradient(
+      180deg,
+      rgba(127, 252, 59, 0.16) 0%,
+      rgba(0, 0, 0, 0.2) 87%
+    );
 
     z-index: 1;
   }
