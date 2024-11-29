@@ -14,6 +14,7 @@ import Icon3 from "assets/icon-03.svg";
 
 import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
 import { ReactComponent as LocationIcon } from "assets/location.svg";
+import { Link } from "components";
 
 import "./Home.scss";
 
@@ -68,10 +69,12 @@ const Home = ({ isMobile }) => {
                 </div>
               </div>
               {!isMobile && (
-                <button className={`arrow-button font-text-md `}>
-                  VIEW MORE
-                  <ArrowIcon className="arrow-icon" />
-                </button>
+                <Link to="/company">
+                  <button className={`arrow-button font-text-md `}>
+                    VIEW MORE
+                    <ArrowIcon className="arrow-icon" />
+                  </button>
+                </Link>
               )}
             </div>
             <div
@@ -105,12 +108,14 @@ const Home = ({ isMobile }) => {
             </div>
 
             {isMobile && (
-              <button
-                className={`arrow-button arrow-button-mobile font-text-md`}
-              >
-                VIEW MORE
-                <ArrowIcon className="arrow-icon" />
-              </button>
+              <Link to="/company">
+                <button
+                  className={`arrow-button arrow-button-mobile font-text-md`}
+                >
+                  VIEW MORE
+                  <ArrowIcon className="arrow-icon" />
+                </button>
+              </Link>
             )}
           </div>
         </div>

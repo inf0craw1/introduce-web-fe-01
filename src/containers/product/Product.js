@@ -70,16 +70,18 @@ const Product = ({ isMobile }) => {
                   AI SMART FARM SYSTEM
                 </div>
               </div>
-              <div
-                className={
-                  isMobile
-                    ? "arrow-button-mobile font-text-xs"
-                    : "arrow-button font-text-md"
-                }
-              >
-                CONTACT US
-                <ArrowIcon className="arrow-icon" />
-              </div>
+              <Link to="/contact">
+                <button
+                  className={
+                    isMobile
+                      ? "arrow-button-mobile font-text-xs"
+                      : "arrow-button font-text-md"
+                  }
+                >
+                  CONTACT US
+                  <ArrowIcon className="arrow-icon" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
