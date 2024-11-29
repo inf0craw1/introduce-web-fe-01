@@ -54,6 +54,7 @@ const Main = ({ match: { path } }) => {
   }, []); // eslint-disable-line
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setIsOpen(false);
   }, [path]);
 
