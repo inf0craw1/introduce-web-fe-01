@@ -24,7 +24,7 @@
     background: index.$black;
 
     &-mobile {
-      height: 420px;
+      height: 100vh;
     }
 
     .img-container {
@@ -101,7 +101,7 @@
                 justify-content: start;
               }
 
-              & > div {
+              &>div {
                 width: 100%;
               }
 
@@ -144,7 +144,7 @@
                       gap: 8px;
                     }
 
-                    & + div {
+                    &+div {
                       margin-top: 40px;
                     }
 
@@ -335,11 +335,9 @@
 
       padding: 158px 0 156px 0;
 
-      background: linear-gradient(
-        180deg,
-        rgba(127, 252, 59, 0.16) 0%,
-        rgba(0, 0, 0, 0.2) 87%
-      );
+      background: linear-gradient(180deg,
+          rgba(127, 252, 59, 0.16) 0%,
+          rgba(0, 0, 0, 0.2) 87%);
 
       color: index.$white;
 
@@ -407,6 +405,7 @@
                   margin-bottom: 32px;
                 }
               }
+
               .content-mobile {
                 h3 {
                   margin-bottom: 8px;

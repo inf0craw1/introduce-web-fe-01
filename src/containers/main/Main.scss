@@ -22,8 +22,8 @@ html {
 
 .main-container {
   position: relative;
-  right: 0;
-  transition: right 0.3s;
+  right: 0px;
+  transition: all 0.3s;
 
   &.isOpen {
     right: 300px;
@@ -45,10 +45,11 @@ html {
   width: 300px;
   height: 100%;
   background-color: white;
-  transition: right 0.3s;
+  transition: all 0.3s;
+  z-index: 11;
 
   &.isOpen {
-    right: 0;
+    right: 0px;
   }
 
   .link {
@@ -71,7 +72,7 @@ html {
   .content-divider-content {
     flex-direction: column;
 
-    & > div {
+    &>div {
       margin-right: 0;
     }
 
@@ -87,7 +88,7 @@ html {
   .background-overlay-content {
     flex-direction: column;
 
-    & > div {
+    &>div {
       display: flex;
       flex-direction: column;
       align-items: center;

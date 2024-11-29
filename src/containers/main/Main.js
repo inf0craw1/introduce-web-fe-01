@@ -60,8 +60,8 @@ const Main = ({ match: { path } }) => {
   const Page = PAGES[path];
 
   return (
-    <div className={`main-wrapper${isMobile ? " isMobile" : ""}`}>
-      <div className={`main-container${isOpen ? " isOpen" : ""}`}>
+    <div className={`main-wrapper ${isMobile ? "isMobile" : ""}`}>
+      <div className={`main-container ${isOpen ? "isOpen" : ""}`}>
         <Header
           isMobile={isMobile}
           isOpen={isOpen}
@@ -70,7 +70,7 @@ const Main = ({ match: { path } }) => {
         <Page isMobile={isMobile} />
         <Footer isMobile={isMobile} />
       </div>
-      <div ref={menuRef} className={`menu${isOpen ? " isOpen" : ""}`}>
+      <div ref={menuRef} className={`menu ${isOpen ? "isOpen" : ""}`}>
         <Link to="/">HOME</Link>
         <Link to="/company">COMPANY</Link>
         <Link to="/product">PRODUCTS</Link>

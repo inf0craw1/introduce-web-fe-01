@@ -10,7 +10,7 @@ import "./Header.scss";
 
 const Header = ({ isMobile, isOpen, onClickMenu }) => {
   return (
-    <div className="header-layout">
+    <div className={`header-layout ${isOpen ? "isOpen" : ""}`}>
       <div
         className={`header-container ${
           isMobile ? "header-container-mobile" : ""
